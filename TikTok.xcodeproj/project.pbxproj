@@ -1,0 +1,390 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BB1100010000000000000001 /* TikTokApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100010000000000000001 /* TikTokApp.swift */; };
+		BB1100020000000000000001 /* TikTokTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100020000000000000001 /* TikTokTheme.swift */; };
+		BB1100030000000000000001 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100030000000000000001 /* LanguageManager.swift */; };
+		BB1100040000000000000001 /* VideoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100040000000000000001 /* VideoItem.swift */; };
+		BB1100050000000000000001 /* ShopProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100050000000000000001 /* ShopProduct.swift */; };
+		BB1100060000000000000001 /* CommentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100060000000000000001 /* CommentItem.swift */; };
+		BB1100070000000000000001 /* InboxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100070000000000000001 /* InboxItem.swift */; };
+		BB1100080000000000000001 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100080000000000000001 /* UserProfile.swift */; };
+		BB1100090000000000000001 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100090000000000000001 /* FeedViewModel.swift */; };
+		BB1100100000000000000001 /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100100000000000000001 /* ShopViewModel.swift */; };
+		BB1100110000000000000001 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100110000000000000001 /* ProfileViewModel.swift */; };
+		BB1100120000000000000001 /* TikTokPlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100120000000000000001 /* TikTokPlusButton.swift */; };
+		BB1100130000000000000001 /* FloatingHeartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100130000000000000001 /* FloatingHeartsView.swift */; };
+		BB1100140000000000000001 /* MarqueeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100140000000000000001 /* MarqueeText.swift */; };
+		BB1100150000000000000001 /* RotatingDiscView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100150000000000000001 /* RotatingDiscView.swift */; };
+		BB1100160000000000000001 /* CachedAsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100160000000000000001 /* CachedAsyncImageView.swift */; };
+		BB1100170000000000000001 /* VideoPlayerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100170000000000000001 /* VideoPlayerContainer.swift */; };
+		BB1100180000000000000001 /* FeedOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100180000000000000001 /* FeedOverlayView.swift */; };
+		BB1100190000000000000001 /* CommentsSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100190000000000000001 /* CommentsSheetView.swift */; };
+		BB1100200000000000000001 /* ShareSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100200000000000000001 /* ShareSheetView.swift */; };
+		BB1100210000000000000001 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100210000000000000001 /* FeedView.swift */; };
+		BB1100220000000000000001 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100220000000000000001 /* ProductDetailView.swift */; };
+		BB1100230000000000000001 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100230000000000000001 /* CartView.swift */; };
+		BB1100240000000000000001 /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100240000000000000001 /* ShopView.swift */; };
+		BB1100250000000000000001 /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100250000000000000001 /* FriendsView.swift */; };
+		BB1100260000000000000001 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100260000000000000001 /* CameraView.swift */; };
+		BB1100270000000000000001 /* ChatDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100270000000000000001 /* ChatDetailView.swift */; };
+		BB1100280000000000000001 /* InboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100280000000000000001 /* InboxView.swift */; };
+		BB1100290000000000000001 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100290000000000000001 /* EditProfileView.swift */; };
+		BB1100300000000000000001 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100300000000000000001 /* SettingsView.swift */; };
+		BB1100310000000000000001 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100310000000000000001 /* ProfileView.swift */; };
+		BB1100320000000000000001 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100320000000000000001 /* MainTabView.swift */; };
+		BB1100330000000000000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA1100330000000000000001 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CC0000000000000000000001 /* TikTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA1100010000000000000001 /* TikTokApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/TikTokApp.swift"; sourceTree = "<group>"; };
+		AA1100020000000000000001 /* TikTokTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Theme/TikTokTheme.swift"; sourceTree = "<group>"; };
+		AA1100030000000000000001 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Services/LanguageManager.swift"; sourceTree = "<group>"; };
+		AA1100040000000000000001 /* VideoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Models/VideoItem.swift"; sourceTree = "<group>"; };
+		AA1100050000000000000001 /* ShopProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Models/ShopProduct.swift"; sourceTree = "<group>"; };
+		AA1100060000000000000001 /* CommentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Models/CommentItem.swift"; sourceTree = "<group>"; };
+		AA1100070000000000000001 /* InboxItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Models/InboxItem.swift"; sourceTree = "<group>"; };
+		AA1100080000000000000001 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Models/UserProfile.swift"; sourceTree = "<group>"; };
+		AA1100090000000000000001 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/ViewModels/FeedViewModel.swift"; sourceTree = "<group>"; };
+		AA1100100000000000000001 /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/ViewModels/ShopViewModel.swift"; sourceTree = "<group>"; };
+		AA1100110000000000000001 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/ViewModels/ProfileViewModel.swift"; sourceTree = "<group>"; };
+		AA1100120000000000000001 /* TikTokPlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Views/Components/TikTokPlusButton.swift"; sourceTree = "<group>"; };
+		AA1100130000000000000001 /* FloatingHeartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Views/Components/FloatingHeartsView.swift"; sourceTree = "<group>"; };
+		AA1100140000000000000001 /* MarqueeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Views/Components/MarqueeText.swift"; sourceTree = "<group>"; };
+		AA1100150000000000000001 /* RotatingDiscView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Views/Components/RotatingDiscView.swift"; sourceTree = "<group>"; };
+		AA1100160000000000000001 /* CachedAsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Views/Components/CachedAsyncImageView.swift"; sourceTree = "<group>"; };
+		AA1100170000000000000001 /* VideoPlayerContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Views/Feed/VideoPlayerContainer.swift"; sourceTree = "<group>"; };
+		AA1100180000000000000001 /* FeedOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Views/Feed/FeedOverlayView.swift"; sourceTree = "<group>"; };
+		AA1100190000000000000001 /* CommentsSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Views/Feed/CommentsSheetView.swift"; sourceTree = "<group>"; };
+		AA1100200000000000000001 /* ShareSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Views/Feed/ShareSheetView.swift"; sourceTree = "<group>"; };
+		AA1100210000000000000001 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Views/Feed/FeedView.swift"; sourceTree = "<group>"; };
+		AA1100220000000000000001 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Views/Shop/ProductDetailView.swift"; sourceTree = "<group>"; };
+		AA1100230000000000000001 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Views/Shop/CartView.swift"; sourceTree = "<group>"; };
+		AA1100240000000000000001 /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Views/Shop/ShopView.swift"; sourceTree = "<group>"; };
+		AA1100250000000000000001 /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Views/Friends/FriendsView.swift"; sourceTree = "<group>"; };
+		AA1100260000000000000001 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Views/Camera/CameraView.swift"; sourceTree = "<group>"; };
+		AA1100270000000000000001 /* ChatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Views/Inbox/ChatDetailView.swift"; sourceTree = "<group>"; };
+		AA1100280000000000000001 /* InboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Views/Inbox/InboxView.swift"; sourceTree = "<group>"; };
+		AA1100290000000000000001 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Views/Profile/EditProfileView.swift"; sourceTree = "<group>"; };
+		AA1100300000000000000001 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Views/Profile/SettingsView.swift"; sourceTree = "<group>"; };
+		AA1100310000000000000001 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Views/Profile/ProfileView.swift"; sourceTree = "<group>"; };
+		AA1100320000000000000001 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Views/MainTabView.swift"; sourceTree = "<group>"; };
+		AA1100330000000000000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "TikTok/Resources/Assets.xcassets"; sourceTree = "<group>"; };
+		AA1100340000000000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TikTok/Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF0000000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		GG0000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				AA1100010000000000000001 /* TikTokApp.swift */,
+				AA1100020000000000000001 /* TikTokTheme.swift */,
+				AA1100030000000000000001 /* LanguageManager.swift */,
+				AA1100040000000000000001 /* VideoItem.swift */,
+				AA1100050000000000000001 /* ShopProduct.swift */,
+				AA1100060000000000000001 /* CommentItem.swift */,
+				AA1100070000000000000001 /* InboxItem.swift */,
+				AA1100080000000000000001 /* UserProfile.swift */,
+				AA1100090000000000000001 /* FeedViewModel.swift */,
+				AA1100100000000000000001 /* ShopViewModel.swift */,
+				AA1100110000000000000001 /* ProfileViewModel.swift */,
+				AA1100120000000000000001 /* TikTokPlusButton.swift */,
+				AA1100130000000000000001 /* FloatingHeartsView.swift */,
+				AA1100140000000000000001 /* MarqueeText.swift */,
+				AA1100150000000000000001 /* RotatingDiscView.swift */,
+				AA1100160000000000000001 /* CachedAsyncImageView.swift */,
+				AA1100170000000000000001 /* VideoPlayerContainer.swift */,
+				AA1100180000000000000001 /* FeedOverlayView.swift */,
+				AA1100190000000000000001 /* CommentsSheetView.swift */,
+				AA1100200000000000000001 /* ShareSheetView.swift */,
+				AA1100210000000000000001 /* FeedView.swift */,
+				AA1100220000000000000001 /* ProductDetailView.swift */,
+				AA1100230000000000000001 /* CartView.swift */,
+				AA1100240000000000000001 /* ShopView.swift */,
+				AA1100250000000000000001 /* FriendsView.swift */,
+				AA1100260000000000000001 /* CameraView.swift */,
+				AA1100270000000000000001 /* ChatDetailView.swift */,
+				AA1100280000000000000001 /* InboxView.swift */,
+				AA1100290000000000000001 /* EditProfileView.swift */,
+				AA1100300000000000000001 /* SettingsView.swift */,
+				AA1100310000000000000001 /* ProfileView.swift */,
+				AA1100320000000000000001 /* MainTabView.swift */,
+				AA1100330000000000000001 /* Assets.xcassets */,
+				AA1100340000000000000001 /* Info.plist */,
+				GG0000000000000000000002 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		GG0000000000000000000002 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CC0000000000000000000001 /* TikTok.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EE0000000000000000000001 /* TikTok */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD0000000000000000000002 /* Build configuration list for PBXNativeTarget "TikTok" */;
+			buildPhases = (
+				SS0000000000000000000001 /* Sources */,
+				FF0000000000000000000001 /* Frameworks */,
+				RR0000000000000000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TikTok;
+			productName = TikTok;
+			productReference = CC0000000000000000000001 /* TikTok.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		000000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					EE0000000000000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = DD0000000000000000000001 /* Build configuration list for PBXProject "TikTok" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = GG0000000000000000000001;
+			productRefGroup = GG0000000000000000000002 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EE0000000000000000000001 /* TikTok */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		RR0000000000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB1100330000000000000001 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		SS0000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB1100010000000000000001 /* TikTokApp.swift in Sources */,
+				BB1100020000000000000001 /* TikTokTheme.swift in Sources */,
+				BB1100030000000000000001 /* LanguageManager.swift in Sources */,
+				BB1100040000000000000001 /* VideoItem.swift in Sources */,
+				BB1100050000000000000001 /* ShopProduct.swift in Sources */,
+				BB1100060000000000000001 /* CommentItem.swift in Sources */,
+				BB1100070000000000000001 /* InboxItem.swift in Sources */,
+				BB1100080000000000000001 /* UserProfile.swift in Sources */,
+				BB1100090000000000000001 /* FeedViewModel.swift in Sources */,
+				BB1100100000000000000001 /* ShopViewModel.swift in Sources */,
+				BB1100110000000000000001 /* ProfileViewModel.swift in Sources */,
+				BB1100120000000000000001 /* TikTokPlusButton.swift in Sources */,
+				BB1100130000000000000001 /* FloatingHeartsView.swift in Sources */,
+				BB1100140000000000000001 /* MarqueeText.swift in Sources */,
+				BB1100150000000000000001 /* RotatingDiscView.swift in Sources */,
+				BB1100160000000000000001 /* CachedAsyncImageView.swift in Sources */,
+				BB1100170000000000000001 /* VideoPlayerContainer.swift in Sources */,
+				BB1100180000000000000001 /* FeedOverlayView.swift in Sources */,
+				BB1100190000000000000001 /* CommentsSheetView.swift in Sources */,
+				BB1100200000000000000001 /* ShareSheetView.swift in Sources */,
+				BB1100210000000000000001 /* FeedView.swift in Sources */,
+				BB1100220000000000000001 /* ProductDetailView.swift in Sources */,
+				BB1100230000000000000001 /* CartView.swift in Sources */,
+				BB1100240000000000000001 /* ShopView.swift in Sources */,
+				BB1100250000000000000001 /* FriendsView.swift in Sources */,
+				BB1100260000000000000001 /* CameraView.swift in Sources */,
+				BB1100270000000000000001 /* ChatDetailView.swift in Sources */,
+				BB1100280000000000000001 /* InboxView.swift in Sources */,
+				BB1100290000000000000001 /* EditProfileView.swift in Sources */,
+				BB1100300000000000000001 /* SettingsView.swift in Sources */,
+				BB1100310000000000000001 /* ProfileView.swift in Sources */,
+				BB1100320000000000000001 /* MainTabView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		110000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		110000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = "wholemodule";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		220000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
+				GENERATE_INFOPLIST_KEY_UILaunchScreen_Generation = NO;
+				INFOPLIST_FILE = TikTok/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.purorodriguez.tiktok;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1";
+			};
+			name = Debug;
+		};
+		220000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
+				GENERATE_INFOPLIST_KEY_UILaunchScreen_Generation = NO;
+				INFOPLIST_FILE = TikTok/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.purorodriguez.tiktok;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DD0000000000000000000001 /* Build configuration list for PBXProject "TikTok" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				110000000000000000000001 /* Debug */,
+				110000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD0000000000000000000002 /* Build configuration list for PBXNativeTarget "TikTok" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				220000000000000000000001 /* Debug */,
+				220000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 000000000000000000000001 /* Project object */;
+}

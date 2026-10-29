@@ -1,0 +1,88 @@
+name: Compilar TikTok iOS IPA
+
+on:
+  push:
+    branches: [ "main" ]
+    tags: [ "v*" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      create_release:
+        description: '¿Crear release en GitHub con el archivo IPA?'
+        required: false
+        type: boolean
+        default: true
+
+jobs:
+  build:
+    name: Compilar IPA (iOS)
+    runs-on: macos-14
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar versión de Xcode
+        run: |
+          echo "Xcode actual:"
+          xcodebuild -version
+          echo "Esquemas disponibles en el proyecto:"
+          xcodebuild -list -project TikTok.xcodeproj
+
+      - name: Compilar App para iOS (Release)
+        run: |
+          xcodebuild clean build \
+            -project TikTok.xcodeproj \
+            -scheme TikTok \
+            -configuration Release \
+            -destination "generic/platform=iOS" \
+            -derivedDataPath derived_data \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY=""
+
+      - name: Empaquetar en archivo TikTok.ipa
+        run: |
+          mkdir -p Payload
+          cp -R "derived_data/Build/Products/Release-iphoneos/TikTok.app" Payload/
+          zip -r -q TikTok.ipa Payload
+          ls -lh TikTok.ipa
+          echo "Archivo TikTok.ipa generado con éxito."
+
+      - name: Subir artefacto IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: TikTok-iOS-IPA
+          path: TikTok.ipa
+          retention-days: 14
+
+      - name: Crear GitHub Release con el archivo IPA
+        if: startsWith(github.ref, 'refs/tags/') || github.event.inputs.create_release == 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || format('v1.0.0-{0}', github.run_number) }}
+          name: ${{ format('TikTok iOS v1.0.0 (Build {0})', github.run_number) }}
+          body: |
+            ### 🚀 TikTok Clone para iOS (Compilación Automática)
+            
+            Este archivo `.ipa` fue compilado automáticamente usando GitHub Actions con macOS 14 y Xcode.
+            
+            #### 📱 Características incluidas:
+            - **Inicio (Feed)**: "Siguiendo" y "Para ti" con desplazamiento de vídeos a pantalla completa, likes, comentarios, favoritos, compartir y disco musical giratorio.
+            - **TikTok Shop (Tienda)**: Ofertas relámpago, categorías (Moda, Belleza, Electrónica, etc.), directos de compra, cesta de compras y tramitación de pedidos.
+            - **Amigos**: Búsqueda de amigos, sincronización de contactos y cuentas sugeridas.
+            - **Crear (+)**: Botón central icónico de TikTok con interfaz de grabación de cámara, selector de velocidad, filtros, temporizador y música.
+            - **Bandeja de entrada**: Mensajes directos, notificaciones de actividad y chat en tiempo real.
+            - **Perfil**: Estadísticas de seguidores/siguiendo/likes, biografía, pestañas de vídeos subidos, privados, guardados y me gusta.
+            - **Ajustes y Cambio de Idioma**: Selector de idioma dinámico (Español, English, Français, Português), limpiador de caché y ajustes de TikTok Shop.
+            
+            #### 📲 Instalación en tu iPhone:
+            Puedes instalar este archivo `.ipa` utilizando cualquiera de las siguientes herramientas:
+            1. **TrollStore** (Instalación permanente y sin revocar en iOS compatibles).
+            2. **AltStore / Sidestore** (Instalación usando tu Apple ID gratis desde Mac o PC).
+            3. **Sideloadly** (Instalación rápida desde Windows o Mac).
+            4. **Scarlet / Esign** (Instalación directa en el dispositivo).
+          files: TikTok.ipa
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
