@@ -18,6 +18,8 @@ jobs:
   build:
     name: Compilar IPA (iOS)
     runs-on: macos-14
+    permissions:
+      contents: write
 
     steps:
       - name: Descargar repositorio
