@@ -170,3 +170,4 @@ struct ShareSheetView: View {
         .background(TikTokTheme.darkBg.ignoresSafeArea())
     }
 }
+

@@ -15,3 +15,4 @@ class ProfileViewModel: ObservableObject {
         TikTokTheme.hapticNotification(.success)
     }
 }
+

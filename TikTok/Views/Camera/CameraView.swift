@@ -3,26 +3,25 @@ import SwiftUI
 struct CameraView: View {
     @Environment(\.dismiss) var dismiss
     @State private var isRecording: Bool = false
-    @State private var selectedSpeed: String = "1x"
-    @State private var selectedDuration: String = "15s"
+    @State private var selectedDuration: String = "PHOTO"
+    @State private var selectedBottomMode: String = "CAMERA"
     @State private var flashOn: Bool = false
-    @State private var timerActive: Bool = false
     
-    let speeds = ["0.3x", "0.5x", "1x", "2x", "3x"]
-    let durations = ["10m", "60s", "15s", "Foto", "Texto"]
+    let durations = ["10m", "60s", "15s", "PHOTO", "TEXT"]
+    let bottomModes = ["CAMERA", "CREATE"]
     
     var body: some View {
         ZStack {
-            // Viewfinder Camera simulation background
+            // Viewfinder Camera simulation (matching dark aesthetic with blue ambient glow like keyboard in video)
             LinearGradient(
-                colors: [Color(white: 0.12), Color(white: 0.05)],
-                startPoint: .top,
-                endPoint: .bottom
+                colors: [Color(red: 0.05, green: 0.1, blue: 0.2), Color(red: 0.02, green: 0.03, blue: 0.08)],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
             )
             .ignoresSafeArea()
             
             VStack {
-                // Top controls
+                // Top controls (Frame 010)
                 HStack {
                     Button(action: { dismiss() }) {
                         Image(systemName: "xmark")
@@ -36,184 +35,164 @@ struct CameraView: View {
                     // Add Sound Pill
                     HStack(spacing: 6) {
                         Image(systemName: "music.note")
-                            .font(.system(size: 13, weight: .bold))
-                        Text("Añadir sonido")
+                            .font(.system(size: 12, weight: .bold))
+                        Text("Add sound")
                             .font(.system(size: 13, weight: .bold))
                     }
                     .foregroundColor(.white)
-                    .padding(.horizontal, 14)
+                    .padding(.horizontal, 16)
                     .padding(.vertical, 7)
-                    .background(Color.black.opacity(0.4))
+                    .background(Color.black.opacity(0.45))
                     .cornerRadius(20)
                     
                     Spacer()
                     
-                    // Flash
-                    Button(action: {
-                        TikTokTheme.haptic(.light)
-                        flashOn.toggle()
-                    }) {
-                        Image(systemName: flashOn ? "bolt.fill" : "bolt.slash.fill")
-                            .font(.system(size: 18, weight: .bold))
-                            .foregroundColor(flashOn ? .yellow : .white)
-                            .padding(12)
-                    }
+                    // Placeholder spacing for symmetry
+                    Color.clear.frame(width: 44, height: 44)
                 }
-                .padding(.top, 40)
+                .padding(.top, 44)
                 .padding(.horizontal, 10)
                 
-                Spacer()
-                
-                // Right controls toolbar
+                // Right controls toolbar (Frame 010: Flip, Flash, Timer, Filters, Beautify, Expand)
                 HStack {
                     Spacer()
-                    VStack(spacing: 20) {
+                    VStack(spacing: 22) {
                         // Flip
-                        VStack(spacing: 4) {
-                            Image(systemName: "camera.rotate.fill")
-                                .font(.system(size: 22))
-                                .foregroundColor(.white)
-                            Text("Girar")
-                                .font(.system(size: 10, weight: .medium))
-                                .foregroundColor(.white)
-                        }
+                        Image(systemName: "arrow.triangle.2.circlepath.camera")
+                            .font(.system(size: 22))
+                            .foregroundColor(.white)
                         
-                        // Speed
-                        VStack(spacing: 4) {
-                            Image(systemName: "gauge.with.needle.fill")
+                        // Flash
+                        Button(action: {
+                            TikTokTheme.haptic(.light)
+                            flashOn.toggle()
+                        }) {
+                            Image(systemName: flashOn ? "bolt.fill" : "bolt.slash")
                                 .font(.system(size: 22))
-                                .foregroundColor(.white)
-                            Text("Velocidad")
-                                .font(.system(size: 10, weight: .medium))
-                                .foregroundColor(.white)
-                        }
-                        
-                        // Filters
-                        VStack(spacing: 4) {
-                            Image(systemName: "camera.filters")
-                                .font(.system(size: 22))
-                                .foregroundColor(.white)
-                            Text("Filtros")
-                                .font(.system(size: 10, weight: .medium))
-                                .foregroundColor(.white)
-                        }
-                        
-                        // Beautify
-                        VStack(spacing: 4) {
-                            Image(systemName: "wand.and.stars")
-                                .font(.system(size: 22))
-                                .foregroundColor(.white)
-                            Text("Embellecer")
-                                .font(.system(size: 10, weight: .medium))
-                                .foregroundColor(.white)
+                                .foregroundColor(flashOn ? .yellow : .white)
                         }
                         
                         // Timer
-                        VStack(spacing: 4) {
-                            Image(systemName: "timer")
-                                .font(.system(size: 22))
-                                .foregroundColor(.white)
-                            Text("Tiempo")
-                                .font(.system(size: 10, weight: .medium))
-                                .foregroundColor(.white)
-                        }
+                        Image(systemName: "timer")
+                            .font(.system(size: 22))
+                            .foregroundColor(.white)
+                        
+                        // Filters Grid
+                        Image(systemName: "square.grid.2x2")
+                            .font(.system(size: 22))
+                            .foregroundColor(.white)
+                        
+                        // Beautify / Face
+                        Image(systemName: "sparkles")
+                            .font(.system(size: 22))
+                            .foregroundColor(.white)
+                        
+                        // Expand
+                        Image(systemName: "chevron.down")
+                            .font(.system(size: 18, weight: .bold))
+                            .foregroundColor(.white)
                     }
                     .padding(.trailing, 16)
                 }
+                .padding(.top, 10)
                 
                 Spacer()
                 
-                // Speed Selector row
-                HStack(spacing: 16) {
-                    ForEach(speeds, id: \.self) { sp in
-                        Button(action: {
-                            TikTokTheme.haptic(.light)
-                            selectedSpeed = sp
-                        }) {
-                            Text(sp)
-                                .font(.system(size: 12, weight: .bold))
-                                .foregroundColor(selectedSpeed == sp ? .black : .white)
-                                .padding(.horizontal, 10)
-                                .padding(.vertical, 4)
-                                .background(selectedSpeed == sp ? Color.white : Color.black.opacity(0.4))
-                                .cornerRadius(6)
-                        }
-                    }
-                }
-                .padding(.bottom, 16)
-                
-                // Bottom controls: Effects | Record Button | Gallery
-                HStack(spacing: 40) {
-                    // Effects
-                    VStack(spacing: 4) {
-                        Circle()
-                            .fill(LinearGradient(colors: [Color.purple, Color.blue], startPoint: .topLeading, endPoint: .bottomTrailing))
-                            .frame(width: 44, height: 44)
-                            .overlay(
-                                Image(systemName: "sparkles")
-                                    .font(.system(size: 20))
-                                    .foregroundColor(.white)
-                            )
-                        Text("Efectos")
-                            .font(.system(size: 11, weight: .medium))
-                            .foregroundColor(.white)
-                    }
-                    
-                    // Big Red Record Button
-                    Button(action: {
-                        TikTokTheme.haptic(.heavy)
-                        withAnimation(.spring(response: 0.3)) {
-                            isRecording.toggle()
-                        }
-                    }) {
-                        ZStack {
-                            Circle()
-                                .stroke(Color.white, lineWidth: 4)
-                                .frame(width: 82, height: 82)
-                            
-                            if isRecording {
-                                RoundedRectangle(cornerRadius: 8)
-                                    .fill(TikTokTheme.red)
-                                    .frame(width: 32, height: 32)
-                            } else {
-                                Circle()
-                                    .fill(TikTokTheme.red)
-                                    .frame(width: 68, height: 68)
-                            }
-                        }
-                    }
-                    
-                    // Upload Gallery
-                    VStack(spacing: 4) {
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(Color(white: 0.25))
-                            .frame(width: 44, height: 44)
-                            .overlay(
-                                Image(systemName: "photo.on.rectangle.angled")
-                                    .font(.system(size: 20))
-                                    .foregroundColor(.white)
-                            )
-                        Text("Cargar")
-                            .font(.system(size: 11, weight: .medium))
-                            .foregroundColor(.white)
-                    }
-                }
-                .padding(.bottom, 20)
-                
-                // Duration Mode Selector
-                HStack(spacing: 24) {
+                // Duration Mode Selector: 10m | 60s | 15s | PHOTO | TEXT (Frame 010)
+                HStack(spacing: 18) {
                     ForEach(durations, id: \.self) { mode in
                         Button(action: {
                             TikTokTheme.haptic(.light)
                             selectedDuration = mode
                         }) {
                             Text(mode)
-                                .font(.system(size: 14, weight: selectedDuration == mode ? .bold : .medium))
-                                .foregroundColor(selectedDuration == mode ? .white : .gray)
+                                .font(.system(size: 12, weight: .heavy))
+                                .foregroundColor(selectedDuration == mode ? .black : .white)
+                                .padding(.horizontal, selectedDuration == mode ? 12 : 4)
+                                .padding(.vertical, selectedDuration == mode ? 6 : 4)
+                                .background(selectedDuration == mode ? Color.white : Color.clear)
+                                .cornerRadius(14)
                         }
                     }
                 }
-                .padding(.bottom, 24)
+                .padding(.bottom, 22)
+                
+                // Bottom controls: Gallery Upload | Shutter Button | Effects (Frame 010)
+                HStack(spacing: 32) {
+                    // Gallery Upload Thumbnail
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color(red: 0.15, green: 0.35, blue: 0.3))
+                        .frame(width: 44, height: 44)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.white, lineWidth: 2)
+                        )
+                    
+                    // Shutter Button
+                    Button(action: {
+                        TikTokTheme.haptic(.heavy)
+                        withAnimation(.spring(response: 0.25)) {
+                            isRecording.toggle()
+                        }
+                    }) {
+                        ZStack {
+                            Circle()
+                                .stroke(Color.white, lineWidth: 5)
+                                .frame(width: 82, height: 82)
+                            
+                            if selectedDuration == "PHOTO" {
+                                Circle()
+                                    .fill(Color.white)
+                                    .frame(width: 66, height: 66)
+                            } else {
+                                if isRecording {
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .fill(TikTokTheme.red)
+                                        .frame(width: 30, height: 30)
+                                } else {
+                                    Circle()
+                                        .fill(TikTokTheme.red)
+                                        .frame(width: 66, height: 66)
+                                }
+                            }
+                        }
+                    }
+                    
+                    // Face / Effects Thumbnails
+                    HStack(spacing: 10) {
+                        Circle()
+                            .fill(Color.white.opacity(0.2))
+                            .frame(width: 44, height: 44)
+                            .overlay(
+                                Text("😜")
+                                    .font(.system(size: 24))
+                            )
+                        
+                        Circle()
+                            .fill(Color.purple.opacity(0.4))
+                            .frame(width: 44, height: 44)
+                            .overlay(
+                                Text("💃")
+                                    .font(.system(size: 24))
+                            )
+                    }
+                }
+                .padding(.bottom, 18)
+                
+                // Mode switcher at very bottom: CAMERA | CREATE (Frame 010)
+                HStack(spacing: 24) {
+                    ForEach(bottomModes, id: \.self) { bMode in
+                        Button(action: {
+                            TikTokTheme.haptic(.light)
+                            selectedBottomMode = bMode
+                        }) {
+                            Text(bMode)
+                                .font(.system(size: 13, weight: .bold))
+                                .foregroundColor(selectedBottomMode == bMode ? .white : .gray)
+                        }
+                    }
+                }
+                .padding(.bottom, 20)
             }
         }
     }

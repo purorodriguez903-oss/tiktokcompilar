@@ -39,7 +39,9 @@
 		BB1100300000000000000001 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100300000000000000001 /* SettingsView.swift */; };
 		BB1100310000000000000001 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100310000000000000001 /* ProfileView.swift */; };
 		BB1100320000000000000001 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100320000000000000001 /* MainTabView.swift */; };
-		BB1100330000000000000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA1100330000000000000001 /* Assets.xcassets */; };
+		BB1100330000000000000001 /* TikTokLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100330000000000000001 /* TikTokLoaderView.swift */; };
+		BB1100340000000000000001 /* TikTokSplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1100340000000000000001 /* TikTokSplashScreen.swift */; };
+		BB1100350000000000000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA1100350000000000000001 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,8 +78,10 @@
 		AA1100300000000000000001 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Views/Profile/SettingsView.swift"; sourceTree = "<group>"; };
 		AA1100310000000000000001 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Views/Profile/ProfileView.swift"; sourceTree = "<group>"; };
 		AA1100320000000000000001 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Views/MainTabView.swift"; sourceTree = "<group>"; };
-		AA1100330000000000000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "TikTok/Resources/Assets.xcassets"; sourceTree = "<group>"; };
-		AA1100340000000000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TikTok/Info.plist"; sourceTree = "<group>"; };
+		AA1100330000000000000001 /* TikTokLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Views/Components/TikTokLoaderView.swift"; sourceTree = "<group>"; };
+		AA1100340000000000000001 /* TikTokSplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TikTok/Views/Components/TikTokSplashScreen.swift"; sourceTree = "<group>"; };
+		AA1100350000000000000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "TikTok/Resources/Assets.xcassets"; sourceTree = "<group>"; };
+		AA1100360000000000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TikTok/Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +130,10 @@
 				AA1100300000000000000001 /* SettingsView.swift */,
 				AA1100310000000000000001 /* ProfileView.swift */,
 				AA1100320000000000000001 /* MainTabView.swift */,
-				AA1100330000000000000001 /* Assets.xcassets */,
-				AA1100340000000000000001 /* Info.plist */,
+				AA1100330000000000000001 /* TikTokLoaderView.swift */,
+				AA1100340000000000000001 /* TikTokSplashScreen.swift */,
+				AA1100350000000000000001 /* Assets.xcassets */,
+				AA1100360000000000000001 /* Info.plist */,
 				GG0000000000000000000002 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -198,7 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB1100330000000000000001 /* Assets.xcassets in Resources */,
+				BB1100350000000000000001 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +247,8 @@
 				BB1100300000000000000001 /* SettingsView.swift in Sources */,
 				BB1100310000000000000001 /* ProfileView.swift in Sources */,
 				BB1100320000000000000001 /* MainTabView.swift in Sources */,
+				BB1100330000000000000001 /* TikTokLoaderView.swift in Sources */,
+				BB1100340000000000000001 /* TikTokSplashScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

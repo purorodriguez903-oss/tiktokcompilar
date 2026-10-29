@@ -110,3 +110,4 @@ struct EditProfileView: View {
         }
     }
 }
+

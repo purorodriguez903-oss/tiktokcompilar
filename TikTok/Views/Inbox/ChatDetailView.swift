@@ -124,3 +124,4 @@ struct ChatDetailView: View {
         .navigationBarHidden(true)
     }
 }
+

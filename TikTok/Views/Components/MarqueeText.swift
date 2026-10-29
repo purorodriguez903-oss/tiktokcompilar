@@ -32,3 +32,4 @@ struct MarqueeText: View {
         }
     }
 }
+

@@ -235,3 +235,4 @@ struct ProductDetailView: View {
         .background(TikTokTheme.darkBg.ignoresSafeArea())
     }
 }
+

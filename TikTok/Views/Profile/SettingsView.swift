@@ -12,195 +12,226 @@ struct SettingsView: View {
             ZStack {
                 TikTokTheme.darkBg.ignoresSafeArea()
                 
-                List {
-                    // Language Selection Section
-                    Section(header: Text(languageManager.t("settings_content")).foregroundColor(.gray)) {
-                        // Current Language row
-                        Button(action: {
-                            showLanguagePicker = true
-                        }) {
-                            HStack {
-                                Image(systemName: "globe")
-                                    .foregroundColor(TikTokTheme.cyan)
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 20) {
+                        // Section: Cache & Cellular (Frame 017)
+                        SettingsSectionHeader(title: "Cache & Cellular")
+                        
+                        VStack(spacing: 0) {
+                            SettingsNavigationRow(icon: "arrow.down.circle", title: "Offline videos")
+                            Divider().background(Color(white: 0.16)).padding(.leading, 50)
+                            
+                            Button(action: {
+                                TikTokTheme.hapticNotification(.success)
+                                withAnimation {
+                                    cacheSize = "0.0 MB"
+                                    cacheCleared = true
+                                }
+                            }) {
+                                HStack(spacing: 16) {
+                                    Image(systemName: "trash")
+                                        .font(.system(size: 18))
+                                        .foregroundColor(.white)
+                                        .frame(width: 24)
+                                    
+                                    Text("Free up space")
+                                        .font(.system(size: 15))
+                                        .foregroundColor(.white)
+                                    
+                                    Spacer()
+                                    
+                                    Text(cacheSize)
+                                        .font(.system(size: 13))
+                                        .foregroundColor(cacheCleared ? .green : .gray)
+                                    
+                                    Image(systemName: "chevron.right")
+                                        .font(.system(size: 12))
+                                        .foregroundColor(.gray)
+                                }
+                                .padding(.horizontal, 16)
+                                .padding(.vertical, 14)
+                            }
+                            
+                            Divider().background(Color(white: 0.16)).padding(.leading, 50)
+                            SettingsNavigationRow(icon: "drop", title: "Data Saver")
+                        }
+                        .background(Color(white: 0.12))
+                        .cornerRadius(10)
+                        
+                        // Section: App Language & TikTok Shop
+                        SettingsSectionHeader(title: "Content & Display")
+                        VStack(spacing: 0) {
+                            Button(action: { showLanguagePicker = true }) {
+                                HStack(spacing: 16) {
+                                    Image(systemName: "globe")
+                                        .font(.system(size: 18))
+                                        .foregroundColor(TikTokTheme.cyan)
+                                        .frame(width: 24)
+                                    
+                                    Text("App Language")
+                                        .font(.system(size: 15))
+                                        .foregroundColor(.white)
+                                    
+                                    Spacer()
+                                    
+                                    Text("\(languageManager.currentLanguage.flag) \(languageManager.currentLanguage.displayName)")
+                                        .font(.system(size: 13))
+                                        .foregroundColor(.gray)
+                                    
+                                    Image(systemName: "chevron.right")
+                                        .font(.system(size: 12))
+                                        .foregroundColor(.gray)
+                                }
+                                .padding(.horizontal, 16)
+                                .padding(.vertical, 14)
+                            }
+                            
+                            Divider().background(Color(white: 0.16)).padding(.leading, 50)
+                            SettingsNavigationRow(icon: "bag", title: "TikTok Shop Orders")
+                        }
+                        .background(Color(white: 0.12))
+                        .cornerRadius(10)
+                        
+                        // Section: Support & About (Frame 017)
+                        SettingsSectionHeader(title: "Support & About")
+                        VStack(spacing: 0) {
+                            SettingsNavigationRow(icon: "headphones", title: "Help Center")
+                            Divider().background(Color(white: 0.16)).padding(.leading, 50)
+                            SettingsNavigationRow(icon: "lock.shield", title: "Privacy Center")
+                            Divider().background(Color(white: 0.16)).padding(.leading, 50)
+                            SettingsNavigationRow(icon: "info.circle", title: "Terms and Policies")
+                        }
+                        .background(Color(white: 0.12))
+                        .cornerRadius(10)
+                        
+                        // Section: Login (Frame 017)
+                        SettingsSectionHeader(title: "Login")
+                        VStack(spacing: 0) {
+                            HStack(spacing: 16) {
+                                Image(systemName: "arrow.left.arrow.right")
+                                    .font(.system(size: 16))
+                                    .foregroundColor(.white)
                                     .frame(width: 24)
                                 
-                                Text(languageManager.t("settings_language"))
+                                Text("Switch account")
+                                    .font(.system(size: 15))
                                     .foregroundColor(.white)
                                 
                                 Spacer()
                                 
-                                Text("\(languageManager.currentLanguage.flag) \(languageManager.currentLanguage.displayName)")
-                                    .foregroundColor(.gray)
-                                    .font(.system(size: 14))
+                                Circle()
+                                    .fill(Color(white: 0.3))
+                                    .frame(width: 26, height: 26)
+                                    .overlay(
+                                        Text("A")
+                                            .font(.system(size: 11, weight: .bold))
+                                            .foregroundColor(.white)
+                                    )
                                 
                                 Image(systemName: "chevron.right")
-                                    .font(.system(size: 13))
+                                    .font(.system(size: 12))
                                     .foregroundColor(.gray)
                             }
-                        }
-                        
-                        // Dark Mode Toggle
-                        HStack {
-                            Image(systemName: "moon.fill")
-                                .foregroundColor(.purple)
-                                .frame(width: 24)
-                            Text(languageManager.t("settings_dark_mode"))
-                                .foregroundColor(.white)
-                            Spacer()
-                            Text("Activado")
-                                .foregroundColor(.gray)
-                                .font(.system(size: 14))
-                        }
-                    }
-                    .listRowBackground(Color(white: 0.12))
-                    
-                    // TikTok Shop Section
-                    Section(header: Text("TIKTOK SHOP").foregroundColor(.gray)) {
-                        HStack {
-                            Image(systemName: "bag.fill")
-                                .foregroundColor(TikTokTheme.yellow)
-                                .frame(width: 24)
-                            Text(languageManager.t("shop_orders"))
-                                .foregroundColor(.white)
-                            Spacer()
-                            Image(systemName: "chevron.right")
-                                .font(.system(size: 13))
-                                .foregroundColor(.gray)
-                        }
-                        
-                        HStack {
-                            Image(systemName: "ticket.fill")
-                                .foregroundColor(TikTokTheme.red)
-                                .frame(width: 24)
-                            Text(languageManager.t("shop_coupons"))
-                                .foregroundColor(.white)
-                            Spacer()
-                            Image(systemName: "chevron.right")
-                                .font(.system(size: 13))
-                                .foregroundColor(.gray)
-                        }
-                    }
-                    .listRowBackground(Color(white: 0.12))
-                    
-                    // Account Section
-                    Section(header: Text(languageManager.t("settings_account")).foregroundColor(.gray)) {
-                        HStack {
-                            Image(systemName: "person.circle.fill")
-                                .foregroundColor(TikTokTheme.cyan)
-                                .frame(width: 24)
-                            Text(languageManager.t("settings_manage_acc"))
-                                .foregroundColor(.white)
-                            Spacer()
-                            Image(systemName: "chevron.right")
-                                .font(.system(size: 13))
-                                .foregroundColor(.gray)
-                        }
-                        
-                        HStack {
-                            Image(systemName: "lock.shield.fill")
-                                .foregroundColor(.green)
-                                .frame(width: 24)
-                            Text(languageManager.t("settings_privacy"))
-                                .foregroundColor(.white)
-                            Spacer()
-                            Image(systemName: "chevron.right")
-                                .font(.system(size: 13))
-                                .foregroundColor(.gray)
-                        }
-                    }
-                    .listRowBackground(Color(white: 0.12))
-                    
-                    // Cache & Storage
-                    Section(header: Text("ALMACENAMIENTO").foregroundColor(.gray)) {
-                        Button(action: {
-                            TikTokTheme.hapticNotification(.success)
-                            withAnimation {
-                                cacheSize = "0.0 MB"
-                                cacheCleared = true
-                            }
-                        }) {
-                            HStack {
-                                Image(systemName: "trash.fill")
-                                    .foregroundColor(TikTokTheme.red)
-                                    .frame(width: 24)
-                                Text(languageManager.t("settings_cache"))
-                                    .foregroundColor(.white)
-                                Spacer()
-                                Text(cacheSize)
-                                    .foregroundColor(cacheCleared ? .green : .gray)
-                                    .font(.system(size: 14))
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 14)
+                            
+                            Divider().background(Color(white: 0.16)).padding(.leading, 50)
+                            
+                            Button(action: {
+                                TikTokTheme.haptic(.medium)
+                                dismiss()
+                            }) {
+                                HStack(spacing: 16) {
+                                    Image(systemName: "rectangle.portrait.and.arrow.right")
+                                        .font(.system(size: 16))
+                                        .foregroundColor(TikTokTheme.red)
+                                        .frame(width: 24)
+                                    
+                                    Text("Log out")
+                                        .font(.system(size: 15, weight: .medium))
+                                        .foregroundColor(TikTokTheme.red)
+                                    
+                                    Spacer()
+                                }
+                                .padding(.horizontal, 16)
+                                .padding(.vertical, 14)
                             }
                         }
+                        .background(Color(white: 0.12))
+                        .cornerRadius(10)
                         
-                        if cacheCleared {
-                            Text(languageManager.t("settings_cache_cleared"))
-                                .font(.system(size: 12, weight: .bold))
-                                .foregroundColor(.green)
+                        // Exact Version String (Frame 017)
+                        VStack {
+                            Text("v47.4.0 (4740320)")
+                                .font(.system(size: 12))
+                                .foregroundColor(.gray)
+                                .frame(maxWidth: .infinity)
+                                .padding(.top, 16)
+                                .padding(.bottom, 24)
                         }
                     }
-                    .listRowBackground(Color(white: 0.12))
-                    
-                    // Support & About
-                    Section(header: Text(languageManager.t("settings_support")).foregroundColor(.gray)) {
-                        HStack {
-                            Image(systemName: "questionmark.circle.fill")
-                                .foregroundColor(.blue)
-                                .frame(width: 24)
-                            Text(languageManager.t("settings_help_center"))
-                                .foregroundColor(.white)
-                            Spacer()
-                            Image(systemName: "chevron.right")
-                                .font(.system(size: 13))
-                                .foregroundColor(.gray)
-                        }
-                        
-                        HStack {
-                            Image(systemName: "info.circle.fill")
-                                .foregroundColor(.gray)
-                                .frame(width: 24)
-                            Text(languageManager.t("settings_version"))
-                                .foregroundColor(.gray)
-                                .font(.system(size: 13))
-                        }
-                    }
-                    .listRowBackground(Color(white: 0.12))
-                    
-                    // Logout
-                    Section {
-                        Button(action: {
-                            TikTokTheme.haptic(.heavy)
-                            dismiss()
-                        }) {
-                            HStack {
-                                Spacer()
-                                Text(languageManager.t("settings_logout"))
-                                    .font(.system(size: 15, weight: .bold))
-                                    .foregroundColor(TikTokTheme.red)
-                                Spacer()
-                            }
-                        }
-                    }
-                    .listRowBackground(Color(white: 0.12))
+                    .padding(.horizontal, 16)
+                    .padding(.top, 10)
                 }
-                .scrollContentBackground(.hidden)
             }
-            .navigationTitle(languageManager.t("settings_title"))
+            .navigationTitle("Settings and privacy")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Listo") { dismiss() }
-                        .foregroundColor(.white)
+                ToolbarItem(placement: .cancellationAction) {
+                    Button(action: { dismiss() }) {
+                        Image(systemName: "chevron.left")
+                            .font(.system(size: 16, weight: .semibold))
+                            .foregroundColor(.white)
+                    }
                 }
             }
-            .confirmationDialog("Seleccionar idioma", isPresented: $showLanguagePicker, titleVisibility: .visible) {
+            .confirmationDialog("App Language", isPresented: $showLanguagePicker, titleVisibility: .visible) {
                 ForEach(AppLanguage.allCases) { lang in
                     Button("\(lang.flag) \(lang.displayName)") {
                         TikTokTheme.hapticNotification(.success)
                         languageManager.currentLanguage = lang
                     }
                 }
-                Button("Cancelar", role: .cancel) {}
+                Button("Cancel", role: .cancel) {}
             }
+        }
+    }
+}
+
+struct SettingsSectionHeader: View {
+    let title: String
+    var body: some View {
+        Text(title)
+            .font(.system(size: 13, weight: .semibold))
+            .foregroundColor(.gray)
+            .padding(.horizontal, 4)
+    }
+}
+
+struct SettingsNavigationRow: View {
+    let icon: String
+    let title: String
+    
+    var body: some View {
+        Button(action: { TikTokTheme.haptic(.light) }) {
+            HStack(spacing: 16) {
+                Image(systemName: icon)
+                    .font(.system(size: 18))
+                    .foregroundColor(.white)
+                    .frame(width: 24)
+                
+                Text(title)
+                    .font(.system(size: 15))
+                    .foregroundColor(.white)
+                
+                Spacer()
+                
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 12))
+                    .foregroundColor(.gray)
+            }
+            .padding(.horizontal, 16)
+            .padding(.vertical, 14)
         }
     }
 }

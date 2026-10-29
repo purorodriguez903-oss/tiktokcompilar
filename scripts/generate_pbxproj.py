@@ -34,8 +34,10 @@ files_data = [
     ('30', 'TikTok/Views/Profile/SettingsView.swift', 'SettingsView.swift', 'sourcecode.swift', True, False),
     ('31', 'TikTok/Views/Profile/ProfileView.swift', 'ProfileView.swift', 'sourcecode.swift', True, False),
     ('32', 'TikTok/Views/MainTabView.swift', 'MainTabView.swift', 'sourcecode.swift', True, False),
-    ('33', 'TikTok/Resources/Assets.xcassets', 'Assets.xcassets', 'folder.assetcatalog', False, True),
-    ('34', 'TikTok/Info.plist', 'Info.plist', 'text.plist.xml', False, False),
+    ('33', 'TikTok/Views/Components/TikTokLoaderView.swift', 'TikTokLoaderView.swift', 'sourcecode.swift', True, False),
+    ('34', 'TikTok/Views/Components/TikTokSplashScreen.swift', 'TikTokSplashScreen.swift', 'sourcecode.swift', True, False),
+    ('35', 'TikTok/Resources/Assets.xcassets', 'Assets.xcassets', 'folder.assetcatalog', False, True),
+    ('36', 'TikTok/Info.plist', 'Info.plist', 'text.plist.xml', False, False),
 ]
 
 pbx_lines = [

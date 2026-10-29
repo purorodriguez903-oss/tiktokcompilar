@@ -246,3 +246,4 @@ struct ShopView: View {
         }
     }
 }
+
