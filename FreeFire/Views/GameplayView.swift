@@ -42,7 +42,10 @@ struct GameplayView: View {
     ]
     
     var currentWeapon: Weapon {
-        weaponsInLoadout[safe: activeWeaponIndex] ?? equippedWeapon
+        if activeWeaponIndex >= 0 && activeWeaponIndex < weaponsInLoadout.count {
+            return weaponsInLoadout[activeWeaponIndex]
+        }
+        return equippedWeapon
     }
     
     var body: some View {
@@ -159,9 +162,12 @@ struct GameplayView: View {
                 }
             }
             .contentShape(Rectangle())
-            .onTapGesture { loc in
-                movePlayer(to: loc)
-            }
+            .gesture(
+                DragGesture(minimumDistance: 0)
+                    .onEnded { value in
+                        movePlayer(to: value.location)
+                    }
+            )
             
             // HUD Overlay (Authentic 2019 Layout)
             VStack {
@@ -511,3 +517,4 @@ struct GameplayView: View {
         playerHealth = min(200, playerHealth + 75)
     }
 }
+

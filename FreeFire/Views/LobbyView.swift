@@ -10,21 +10,27 @@ struct LobbyView: View {
     @State private var matchMode = "CLÁSICO - BERMUDA"
     @State private var teamType = "SOLO"
     @State private var selectedCharacterName = "Adán"
+    @State private var equippedWeapon: Weapon = Weapon.classic2019Weapons[0]
+    @State private var selectedCharacter: FFCharacter = FFCharacter.classic2019Characters[0]
     
     var body: some View {
         ZStack {
             if isInGame {
-                GameplayView(onExitMatch: {
-                    isInGame = false
-                    isStartingMatch = false
-                })
+                GameplayView(
+                    equippedWeapon: equippedWeapon,
+                    selectedCharacter: selectedCharacter,
+                    onExitToLobby: {
+                        isInGame = false
+                        isStartingMatch = false
+                    }
+                )
                 .transition(.opacity)
             } else {
                 lobbyContent
             }
         }
         .fullScreenCover(isPresented: $showArmory) {
-            ArmoryView()
+            ArmoryView(selectedWeapon: $equippedWeapon)
         }
         .fullScreenCover(isPresented: $showCharacters) {
             CharactersView()
@@ -410,3 +416,4 @@ struct LobbyView: View {
         }
     }
 }
+

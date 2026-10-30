@@ -280,3 +280,4 @@ struct Settings2019View: View {
         }
     }
 }
+

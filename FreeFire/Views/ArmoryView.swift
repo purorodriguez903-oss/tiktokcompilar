@@ -186,3 +186,4 @@ struct StatBarRow: View {
         }
     }
 }
+

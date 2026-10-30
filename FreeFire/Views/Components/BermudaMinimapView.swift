@@ -45,3 +45,4 @@ struct BermudaMinimapView: View {
         .frame(width: 86, height: 86)
     }
 }
+

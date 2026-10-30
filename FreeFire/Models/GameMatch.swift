@@ -32,3 +32,4 @@ struct DamageIndicator: Identifiable {
     var opacity: Double = 1.0
     var offsetY: CGFloat = 0.0
 }
+
