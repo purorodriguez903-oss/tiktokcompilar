@@ -85,13 +85,10 @@ struct FeedOverlayView: View {
                 VStack(spacing: 16) {
                     // Profile Avatar + Follow '+'
                     ZStack(alignment: .bottom) {
-                        AsyncImage(url: URL(string: video.authorAvatarUrl)) { phase in
-                            if let img = phase.image {
-                                img.resizable().scaledToFill()
-                            } else {
-                                Circle().fill(Color.gray)
-                            }
-                        }
+                        CachedAsyncImageView(
+                            urlString: video.authorAvatarUrl,
+                            targetSize: CGSize(width: 48, height: 48)
+                        )
                         .frame(width: 48, height: 48)
                         .clipShape(Circle())
                         .overlay(Circle().stroke(Color.white, lineWidth: 1.5))

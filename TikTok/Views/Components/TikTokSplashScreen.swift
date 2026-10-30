@@ -53,3 +53,4 @@ struct TikTokSplashScreen: View {
         }
     }
 }
+

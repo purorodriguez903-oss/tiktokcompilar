@@ -116,13 +116,10 @@ struct InboxView: View {
                                     HStack(spacing: 12) {
                                         // Avatar with active green dot or story ring (Frame 011)
                                         ZStack(alignment: .bottomTrailing) {
-                                            AsyncImage(url: URL(string: contact.avatarUrl)) { phase in
-                                                if let img = phase.image {
-                                                    img.resizable().scaledToFill()
-                                                } else {
-                                                    Circle().fill(Color.gray)
-                                                }
-                                            }
+                                            CachedAsyncImageView(
+                                                urlString: contact.avatarUrl,
+                                                targetSize: CGSize(width: 52, height: 52)
+                                            )
                                             .frame(width: 52, height: 52)
                                             .clipShape(Circle())
                                             .overlay(

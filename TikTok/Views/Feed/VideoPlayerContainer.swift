@@ -1,47 +1,41 @@
 import SwiftUI
-import AVKit
+import AVFoundation
 
-struct VideoPlayerRepresentable: UIViewControllerRepresentable {
+struct OptimizedPlayerRepresentable: UIViewRepresentable {
     let videoUrl: String
+    let isActive: Bool
     @Binding var isPlaying: Bool
     
-    func makeUIViewController(context: Context) -> AVPlayerViewController {
-        let controller = AVPlayerViewController()
-        controller.showsPlaybackControls = false
-        controller.videoGravity = .resizeAspectFill
-        
-        if let url = URL(string: videoUrl) {
-            let player = AVPlayer(url: url)
-            controller.player = player
-            
-            // Loop video
-            NotificationCenter.default.addObserver(
-                forName: .AVPlayerItemDidPlayToEndTime,
-                object: player.currentItem,
-                queue: .main
-            ) { _ in
-                player.seek(to: .zero)
-                if self.isPlaying {
-                    player.play()
-                }
-            }
-            
+    func makeUIView(context: Context) -> VideoPlayerUIView {
+        let view = VideoPlayerUIView(frame: .zero)
+        if isActive {
+            view.configure(with: videoUrl)
             if isPlaying {
-                player.play()
+                view.play()
             }
         }
-        
-        return controller
+        return view
     }
     
-    func updateUIViewController(_ uiViewController: AVPlayerViewController, context: Context) {
-        if let player = uiViewController.player {
-            if isPlaying {
-                player.play()
-            } else {
-                player.pause()
+    func updateUIView(_ uiView: VideoPlayerUIView, context: Context) {
+        if isActive {
+            if uiView.playerLayer.player == nil {
+                uiView.configure(with: videoUrl)
             }
+            if isPlaying {
+                uiView.play()
+            } else {
+                uiView.pause()
+            }
+        } else {
+            uiView.stopAndReset()
+            // Release memory for offscreen videos
+            uiView.cleanUp()
         }
+    }
+    
+    static func dismantleUIView(_ uiView: VideoPlayerUIView, coordinator: ()) {
+        uiView.cleanUp()
     }
 }
 
@@ -53,7 +47,7 @@ struct VideoPlayerContainer: View {
     
     var body: some View {
         ZStack {
-            // Background gradient fallback
+            // Background fallback gradient
             LinearGradient(
                 colors: video.bgGradient,
                 startPoint: .topLeading,
@@ -61,10 +55,14 @@ struct VideoPlayerContainer: View {
             )
             .ignoresSafeArea()
             
-            // Native AVPlayer
-            VideoPlayerRepresentable(videoUrl: video.videoUrl, isPlaying: $isPlaying)
-                .ignoresSafeArea()
-                .opacity(isActive ? 1.0 : 0.0)
+            // Ultra-lightweight GPU AVPlayerLayer
+            OptimizedPlayerRepresentable(
+                videoUrl: video.videoUrl,
+                isActive: isActive,
+                isPlaying: $isPlaying
+            )
+            .ignoresSafeArea()
+            .opacity(isActive ? 1.0 : 0.0)
             
             // Play / Pause Indicator Icon
             if showPlayPauseIcon {
@@ -80,15 +78,14 @@ struct VideoPlayerContainer: View {
         }
         .onTapGesture {
             isPlaying.toggle()
-            withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
+            withAnimation(.spring(response: 0.25, dampingFraction: 0.6)) {
                 showPlayPauseIcon = true
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-                withAnimation(.easeOut(duration: 0.3)) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                withAnimation(.easeOut(duration: 0.25)) {
                     showPlayPauseIcon = false
                 }
             }
         }
     }
 }
-

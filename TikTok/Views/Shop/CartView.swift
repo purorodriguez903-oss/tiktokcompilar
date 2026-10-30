@@ -45,13 +45,10 @@ struct CartView: View {
                             if let product = shopViewModel.products.first(where: { $0.id == prodId }) {
                                 let qty = shopViewModel.cart[prodId] ?? 1
                                 HStack(spacing: 12) {
-                                    AsyncImage(url: URL(string: product.imageUrl)) { phase in
-                                        if let img = phase.image {
-                                            img.resizable().scaledToFill()
-                                        } else {
-                                            Rectangle().fill(Color(white: 0.2))
-                                        }
-                                    }
+                                    CachedAsyncImageView(
+                                        urlString: product.imageUrl,
+                                        targetSize: CGSize(width: 80, height: 80)
+                                    )
                                     .frame(width: 80, height: 80)
                                     .clipped()
                                     .cornerRadius(8)

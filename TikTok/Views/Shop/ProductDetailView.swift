@@ -56,13 +56,10 @@ struct ProductDetailView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
                     // Product Image
-                    AsyncImage(url: URL(string: product.imageUrl)) { phase in
-                        if let img = phase.image {
-                            img.resizable().scaledToFill()
-                        } else {
-                            Rectangle().fill(Color(white: 0.2))
-                        }
-                    }
+                    CachedAsyncImageView(
+                        urlString: product.imageUrl,
+                        targetSize: CGSize(width: 400, height: 320)
+                    )
                     .frame(height: 320)
                     .frame(maxWidth: .infinity)
                     .clipped()

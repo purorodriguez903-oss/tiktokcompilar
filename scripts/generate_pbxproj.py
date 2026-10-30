@@ -36,8 +36,10 @@ files_data = [
     ('32', 'TikTok/Views/MainTabView.swift', 'MainTabView.swift', 'sourcecode.swift', True, False),
     ('33', 'TikTok/Views/Components/TikTokLoaderView.swift', 'TikTokLoaderView.swift', 'sourcecode.swift', True, False),
     ('34', 'TikTok/Views/Components/TikTokSplashScreen.swift', 'TikTokSplashScreen.swift', 'sourcecode.swift', True, False),
-    ('35', 'TikTok/Resources/Assets.xcassets', 'Assets.xcassets', 'folder.assetcatalog', False, True),
-    ('36', 'TikTok/Info.plist', 'Info.plist', 'text.plist.xml', False, False),
+    ('35', 'TikTok/Services/ImageCacheManager.swift', 'ImageCacheManager.swift', 'sourcecode.swift', True, False),
+    ('36', 'TikTok/Services/VideoPlaybackManager.swift', 'VideoPlaybackManager.swift', 'sourcecode.swift', True, False),
+    ('37', 'TikTok/Resources/Assets.xcassets', 'Assets.xcassets', 'folder.assetcatalog', False, True),
+    ('38', 'TikTok/Info.plist', 'Info.plist', 'text.plist.xml', False, False),
 ]
 
 pbx_lines = [
@@ -315,6 +317,10 @@ pbx_lines.extend([
     '\t\t\t\tSWIFT_EMIT_LOC_STRINGS = YES;',
     '\t\t\t\tSWIFT_VERSION = 5.0;',
     '\t\t\t\tTARGETED_DEVICE_FAMILY = "1";',
+    '\t\t\t\tDEAD_CODE_STRIPPING = YES;',
+    '\t\t\t\tDEPLOYMENT_POSTPROCESSING = YES;',
+    '\t\t\t\tSTRIP_INSTALLED_PRODUCT = YES;',
+    '\t\t\t\tSTRIP_SWIFT_SYMBOLS = YES;',
     '\t\t\t};',
     '\t\t\tname = Release;',
     '\t\t};',

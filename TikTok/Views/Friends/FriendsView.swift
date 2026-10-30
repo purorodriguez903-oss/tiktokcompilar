@@ -95,13 +95,10 @@ struct FriendsView: View {
                             
                             ForEach($suggested) { $friend in
                                 HStack(spacing: 12) {
-                                    AsyncImage(url: URL(string: friend.avatarUrl)) { phase in
-                                        if let img = phase.image {
-                                            img.resizable().scaledToFill()
-                                        } else {
-                                            Circle().fill(Color.gray)
-                                        }
-                                    }
+                                    CachedAsyncImageView(
+                                        urlString: friend.avatarUrl,
+                                        targetSize: CGSize(width: 46, height: 46)
+                                    )
                                     .frame(width: 46, height: 46)
                                     .clipShape(Circle())
                                     

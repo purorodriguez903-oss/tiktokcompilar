@@ -161,13 +161,10 @@ struct ProfileView: View {
                                     .cornerRadius(12)
                                 
                                 ZStack(alignment: .bottomTrailing) {
-                                    AsyncImage(url: URL(string: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300")) { phase in
-                                        if let img = phase.image {
-                                            img.resizable().scaledToFill()
-                                        } else {
-                                            Circle().fill(Color.gray)
-                                        }
-                                    }
+                                    CachedAsyncImageView(
+                                        urlString: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300",
+                                        targetSize: CGSize(width: 82, height: 82)
+                                    )
                                     .frame(width: 82, height: 82)
                                     .clipShape(Circle())
                                     

@@ -31,7 +31,7 @@ struct RotatingDiscView: View {
             // Vinyl Record Disc
             ZStack {
                 Circle()
-                    .fill(Color(white: 0.15))
+                    .fill(Color(white: 0.14))
                     .frame(width: 48, height: 48)
                     .overlay(
                         Circle()
@@ -40,19 +40,14 @@ struct RotatingDiscView: View {
                 
                 // Grooves
                 Circle()
-                    .stroke(Color(white: 0.25), lineWidth: 1)
+                    .stroke(Color(white: 0.22), lineWidth: 1)
                     .frame(width: 38, height: 38)
                 
-                // Center Album Cover
-                AsyncImage(url: URL(string: avatarUrl)) { phase in
-                    if let image = phase.image {
-                        image
-                            .resizable()
-                            .scaledToFill()
-                    } else {
-                        Circle().fill(Color.gray)
-                    }
-                }
+                // Center Album Cover with Cached Image
+                CachedAsyncImageView(
+                    urlString: avatarUrl,
+                    targetSize: CGSize(width: 26, height: 26)
+                )
                 .frame(width: 26, height: 26)
                 .clipShape(Circle())
             }
@@ -68,4 +63,3 @@ struct RotatingDiscView: View {
         }
     }
 }
-

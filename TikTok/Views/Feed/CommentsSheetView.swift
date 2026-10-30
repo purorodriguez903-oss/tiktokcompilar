@@ -125,13 +125,10 @@ struct CommentsSheetView: View {
                     ForEach($demoComments) { $comment in
                         HStack(alignment: .top, spacing: 12) {
                             // Avatar
-                            AsyncImage(url: URL(string: comment.avatarUrl)) { phase in
-                                if let img = phase.image {
-                                    img.resizable().scaledToFill()
-                                } else {
-                                    Circle().fill(Color.gray)
-                                }
-                            }
+                            CachedAsyncImageView(
+                                urlString: comment.avatarUrl,
+                                targetSize: CGSize(width: 34, height: 34)
+                            )
                             .frame(width: 34, height: 34)
                             .clipShape(Circle())
                             

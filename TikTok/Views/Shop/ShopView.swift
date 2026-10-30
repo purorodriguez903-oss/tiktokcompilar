@@ -160,13 +160,10 @@ struct ShopView: View {
                                         VStack(alignment: .leading, spacing: 6) {
                                             // Product Image
                                             ZStack(alignment: .topLeading) {
-                                                AsyncImage(url: URL(string: product.imageUrl)) { phase in
-                                                    if let img = phase.image {
-                                                        img.resizable().scaledToFill()
-                                                    } else {
-                                                        Rectangle().fill(Color(white: 0.2))
-                                                    }
-                                                }
+                                                CachedAsyncImageView(
+                                                    urlString: product.imageUrl,
+                                                    targetSize: CGSize(width: 200, height: 160)
+                                                )
                                                 .frame(height: 160)
                                                 .frame(maxWidth: .infinity)
                                                 .clipped()
