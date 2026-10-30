@@ -1,90 +1,107 @@
-# 🎮 Free Fire 2019 Clásico (Bermuda Era) para iOS
+# 🎮 Free Fire 2019 Clásico (Bermuda Era) para iOS - Réplica Completa
 
 [![Compilar Free Fire 2019 iOS IPA](https://github.com/purorodriguez903-oss/tiktokcompilar/actions/workflows/build-ipa.yml/badge.svg)](https://github.com/purorodriguez903-oss/tiktokcompilar/actions/workflows/build-ipa.yml)
 
-Recreación nostálgica y jugable del mítico **Free Fire del 2019** desarrollada en lenguaje nativo Swift / SwiftUI para dispositivos iOS (iPhone y iPad).
+Recreación nostálgica, fidedigna y jugable del mítico **Free Fire de 2019 (Era dorada de Bermuda)** desarrollada en lenguaje nativo Swift / SwiftUI para dispositivos iOS (iPhone y iPad).
 
-El proyecto incluye compilación automática en la nube mediante **GitHub Actions** en runners macOS 14 con Xcode, generando directamente el archivo `FreeFire.ipa` listo para instalar mediante TrollStore, Sideloadly o AltStore.
+Compilación automatizada en la nube mediante **GitHub Actions** en runners macOS 14 con Xcode, generando y almacenando directamente el archivo `FreeFire.ipa` en la carpeta **`compiled_ipa/`** y en los **Releases** de GitHub.
 
 ---
 
-## 🔥 Características del Proyecto
+## 🔥 Novedades y Recreación Exacta de 2019
 
-### 1. Pantalla de Carga y Splash Clásico
-- Animación original de entrada con el icónico logo rojo y blanco de **Garena**.
-- Barra de carga militar 2019 con consejos clásicos de supervivencia en Bermuda.
-- Pantalla interactiva "Toca para iniciar".
+### 1. Pantalla de Entrada y Splash Clásico
+- Animación de entrada con el logo original de **Garena** (círculo rojo y letra 'G' blanca) con sonido característico.
+- Fondo de batalla de Bermuda con barra de carga militar y frases originales de consejos de supervivencia.
+- Pantalla interactiva *"Toca para Iniciar"* con sonido de confirmación al entrar al Lobby.
 
-### 2. Lobby Clásico 2019
-- Fondo de base militar de Bermuda con iluminación de reflectores amarillos y sombras de época.
-- Vista previa de personaje 3D con arma en ristre.
-- Barra superior de estado:
-  - Nombre: `VETERANO_2019` (Nivel 45 - Rango Diamante I).
-  - Monedas de Oro: 🪙 `35,420`
-  - Diamantes: 💎 `1,250`
-- Botones de acceso rápido laterales:
-  - **Armería**: Galería completa de armamento clásico.
-  - **Personajes**: Selección de héroes clásicos de 2019.
-  - **Bóveda** & **Luck Royale**.
-  - **Pase Élite**.
-- Selector de modo: **Clásico - Bermuda** (Solo, Dúo, Escuadra).
-- Botón animado **INICIAR** con cuenta regresiva de emparejamiento.
+### 2. Lobby Clásico 2019 y Menú Principal
+- Hangar militar de Bermuda con iluminación de reflectores amarillos y sombras de época.
+- **Modelo de Personaje 3D en Pedestal**: Viste en tiempo real los trajes y armas equipadas desde la Bóveda y la Armería.
+- **Mascotas en el Lobby**: La mascota equipada (Shiba, Gatito, Perro Mecánico o Pantera) acompaña al personaje en el pedestal.
+- **Rueda de Emotes**: Botón central inferior para ejecutar emotes clásicos de 2019 (*Risa, Aplauso, Provocación, Saludo y El Trono*).
+- **Barra Superior de Recursos**:
+  - Perfil: `VETERANO_2019` (Nivel 55, Rango Heroico con escudo dorado y 3,250 puntos).
+  - Monedas de Oro: 🪙 `84,520` (interactivas para compras en Tienda y ruleta de Oro Royale).
+  - Diamantes: 💎 `2,450` (interactivos para compras de aspectos legendarios).
+  - Cubos Mágicos y Piedras Evolutivas.
 
-### 3. Armería 2019 Completa
-- Estadísticas comparativas idénticas a 2019 (Daño, Rango, Cadencia, Precisión, Recarga):
-  - **AK-47**: Alto daño destructivo con retroceso desafiante.
-  - **MP40**: La reina del rusheo a corta distancia con velocidad insuperable.
-  - **SCAR**: El fusil más balanceado y versátil para media distancia.
-  - **M1014**: Escopeta letal a quemarropa.
-  - **AWM**: El legendario rifle de cerrojo de los Drops.
-  - **Pared Gloo**: Escudo de hielo defensivo para supervivencia extrema.
+### 3. Tienda (Store 2019)
+- Apartado comercial clásico interactivo con pestañas:
+  - **Destacados**: Trajes legendarios exclusivos.
+  - **Ropa**: Camisetas, pantalones, máscaras y calzado.
+  - **Cajas**: Cajas de botín con probabilidad de premios raros.
+  - **Mascotas**: Gatito, Perro Mecánico, Shiba Inu y Pantera Nocturna.
+  - **Cubo Mágico**: Intercambio por trajes de temporadas pasadas.
+- Sistema de compra funcional: descuenta oro o diamantes y equipa el aspecto de inmediato.
 
-### 4. Personajes Clásicos 2019
-- **Adán**: El primer sobreviviente de Bermuda, símbolo de habilidad pura.
-- **Kelly**: Habilidad *Carrera Veloz* (+6% de velocidad al correr).
-- **Andrew**: Habilidad *Especialista en Armadura* (reducción de pérdida de durabilidad del chaleco).
-- **Eva**: La pionera clásica de Bermuda.
-- **Ford**: Habilidad *Voluntad de Hierro* (resistencia al daño de la zona segura).
+### 4. Bóveda (Vault 2019)
+- Inventario personal del jugador con visualizador de maniquí en vivo.
+- Sistema de personalización por piezas individuales:
+  - **Conjuntos (Bundles)**: Pase Sakura (Temp. 1), Pase Hip Hop (Temp. 2), Criminal Rojo de Incubadora, Dino Verde clásico.
+  - **Cabezas & Máscaras**: Máscara Oni Sakura, Gorra Hip Hop, Pañuelo Angelical.
+  - **Pecho**: Kimono Guerrero Sakura, Chaqueta Bomber Hip Hop, Chaqueta Heroico 2019.
+  - **Pantalones**: Pantalón Angelical original con alas blancas, Hakama Sakura, Baggy Hip Hop.
+  - **Zapatos**: Tenis retro urbanos y botas de combate de Bermuda.
 
-### 5. Partida Battle Royale Interactiva en Bermuda
-- **Minimapa Radar**: Puntos de interés clásicos (Clock Tower, Peak, Pochinok, Bimasakti, Mill) y zona segura.
-- **Controles HUD Clásicos**:
-  - Joystick analógico virtual de 360 grados.
-  - Botón de disparo con retroceso reactivo y destello de cañón.
-  - Botón de mira de precisión telescópica (punto rojo / 4x zoom).
-  - Botón de despliegue de **Pared Gloo** instantánea frente al jugador.
-  - Botiquín de curación (Medkit) con barra de regeneración gradual.
-  - Indicadores numéricos de impacto en pantalla:
-    - **Amarillo**: Impacto en el cuerpo.
-    - **Rojo crítico (Headshot)**: ¡Tiro a la cabeza letal!
-  - Bots enemigos activos en combate con barra de vida e IA de aproximación.
+### 5. Luck Royale 2019
+- Ruletas interactivas con animación de giro por grados y entrega de premios:
+  - **Arma Royale**: Gran premio *AK-47 Dragón Llameante*.
+  - **Diamante Royale**: Gran premio *Conjunto Sakura*.
+  - **Oro Royale**: Giros por 300 de oro con premios cosméticos.
+  - **Incubadora**: Escuadrón Criminal y Dinos clásicos con pergaminos y piedras evolutivas.
+
+### 6. Armería 2019 con Atributos Clásicos
+- Selector de categorías: Rifles de Asalto, Subfusiles, Escopetas, Francotiradores, Pistolas, Armas Melee y Utilidad.
+- **Skins con Atributos Reales de 2019**:
+  - **AK-47 Dragón Llameante**: +1 Daño, +2 Cadencia de Disparo, -1 Cargador.
+  - **MP40 Mecánica**: +2 Daño, +1 Alcance, -1 Velocidad de Recarga.
+  - **SCAR Cupido**: +2 Cadencia de Disparo, +1 Daño, -1 Rango.
+  - **M1014 Ojo de Gato**: +1 Daño, +1 Alcance.
+  - **AWM Guepardo**: +2 Daño masivo.
+  - **Sartén de Oro 2019**: Escudo protector antibalas en la espalda.
+  - **Katana Luna Sangrienta**: Estela carmesí en cada corte.
+
+### 7. Personajes Clásicos 2019
+- **Hayato**: Habilidad *Bushido* (penetración de armadura al perder vida).
+- **DJ Alok**: Habilidad *Ritmo Brutal* (aura sonora de velocidad y curación de 5 HP/s).
+- **Kelly**: Habilidad *Carrera Veloz* (+6% velocidad de sprint).
+- **Kla**: Habilidad *Muay Thai* (+400% daño de puños para el techo de Factory).
+- **Andrew**: Habilidad *Especialista en Armadura* (resistencia de chaleco).
+- **Paloma**, **Maxim**, **Caroline**, **Laura**, **Rafael**, **Adán**, **Eva** y **Ford**.
+
+### 8. Partida Battle Royale en Bermuda
+- **Minimapa Radar de Bermuda**: Visualización de puntos icónicos (*Peak, Clock Tower, Factory, Pochinok, Bimasakti Strip*), zona segura y zona roja de bombardeo.
+- **Airdrop en Terreno**: Caja de suministros con estela de humo amarillo visible en el mapa.
+- **HUD Clásico**:
+  - Joystick analógico virtual de 360 grados con botón de bloqueo de carrera (sprint).
+  - 4 ranuras de armas activas (Primaria, Secundaria, Pistola, Melee).
+  - Botón de disparo con retroceso reactivo y destello en cañón.
+  - Botón de mira de precisión telescópica con retícula de punto rojo / zoom.
+  - Despliegue en tiempo real de **Paredes Gloo** para bloquear disparos.
+  - Botiquines con indicador de curación progresiva y barra de EP/HP.
+  - Sistema de impacto numérico: números amarillos en el torso y **rojos críticos con calavera (Headshot)** en la cabeza.
+  - Bots enemigos activos con IA de combate, barra de vida y contraataque.
   - Kill Feed militar en vivo en la parte superior.
-  - Pantalla final de victoria legendaria: **¡¡BOOYAH!!** con cálculo de bajas, daño y puntos de rango.
-
-### 6. Ajustes de 2019
-- **Gráficos**: Suave, Estándar, Ultra (Modo 60 FPS).
-- **Sensibilidades**: General, Punto Rojo, Mira 2x, Mira 4x, Mira AWM.
-- **Controles**: Precisión de apuntado, cambio rápido y disparo AWM.
+  - Pantalla final de victoria dorada en llamas: **¡¡BOOYAH!!**
 
 ---
 
-## 🚀 Compilación Automática (GitHub Actions)
+## 📁 Carpeta de Compilación (`compiled_ipa/`)
 
-El proyecto cuenta con un workflow integrado en `.github/workflows/build-ipa.yml`:
-
-1. Cada vez que se realiza un `push` a `main`, el pipeline de GitHub Actions se activa automáticamente.
-2. Compila el código fuente con `xcodebuild` en un entorno **macOS 14**.
-3. Empaqueta el archivo `FreeFire.ipa`.
-4. Publica el archivo `.ipa` en los **Releases** de este repositorio para descarga directa.
+Cada vez que el proyecto se compila automáticamente mediante GitHub Actions o localmente, el archivo `.ipa` se almacena dentro de la carpeta:
+```text
+compiled_ipa/FreeFire.ipa
+```
 
 ---
 
 ## 📲 Cómo Instalar el archivo IPA en tu iPhone o iPad
 
-1. Ve a la pestaña **[Releases](../../releases)** del repositorio.
-2. Descarga el archivo **`FreeFire.ipa`** de la versión más reciente.
-3. Instálalo en tu dispositivo con tu método preferido:
-   - **TrollStore** (Recomendado para iOS con soporte: instalación directa y permanente).
-   - **Sideloadly** (Para Windows y Mac: conecta tu iPhone por USB, arrastra el `.ipa` e introduce tu Apple ID).
-   - **AltStore / Sidestore** (Instalación inalámbrica con refresco automático).
+1. Ve a la carpeta **`compiled_ipa/`** o a la pestaña **[Releases](../../releases)** del repositorio.
+2. Descarga **`FreeFire.ipa`**.
+3. Instálalo con tu herramienta favorita:
+   - **TrollStore** (Instalación permanente en versiones compatibles de iOS).
+   - **Sideloadly** (Para Windows o Mac conectando el cable USB).
+   - **AltStore / Sidestore** (Instalación inalámbrica con Apple ID).
    - **Scarlet / Esign** (Instalación directa en el dispositivo móvil).

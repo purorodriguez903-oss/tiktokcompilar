@@ -44,69 +44,77 @@ jobs:
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGN_IDENTITY=""
 
-      - name: Empaquetar en archivo FreeFire.ipa
+      - name: Empaquetar y almacenar en carpeta compiled_ipa
         run: |
           mkdir -p Payload
           cp -R "derived_data/Build/Products/Release-iphoneos/FreeFire.app" Payload/
           zip -r -q FreeFire.ipa Payload
-          ls -lh FreeFire.ipa
-          echo "Archivo FreeFire.ipa generado con éxito."
+          mkdir -p compiled_ipa
+          cp FreeFire.ipa compiled_ipa/FreeFire.ipa
+          ls -lh compiled_ipa/FreeFire.ipa
+          echo "Archivo FreeFire.ipa generado y guardado en carpeta compiled_ipa/ con éxito."
 
       - name: Subir artefacto IPA
         uses: actions/upload-artifact@v4
         with:
           name: FreeFire-iOS-IPA
-          path: FreeFire.ipa
+          path: compiled_ipa/FreeFire.ipa
           retention-days: 14
 
       - name: Crear GitHub Release con el archivo IPA
         if: startsWith(github.ref, 'refs/tags/') || github.event.inputs.create_release != 'false' || github.event_name == 'push'
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || format('v2019.1.0-{0}', github.run_number) }}
-          name: ${{ format('Free Fire 2019 Clásico iOS v1.40 (Build {0})', github.run_number) }}
+          tag_name: ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || format('v2019.2.0-{0}', github.run_number) }}
+          name: ${{ format('Free Fire 2019 Clásico Completo iOS (Build {0})', github.run_number) }}
           body: |
-            ### 🎮 Free Fire 2019 Clásico (Bermuda Era) para iOS
-            
-            Este archivo `.ipa` fue compilado automáticamente usando GitHub Actions con macOS 14 y Xcode.
-            
-            #### 🔥 Características de la versión clásica 2019:
-            - **Splash y Pantalla de Carga**: Logo original de Garena en rojo, barra de carga militar y frases clásicas de consejos de supervivencia de 2019.
-            - **Lobby Clásico 2019**: Entorno original de hangar/base de Bermuda, iluminación de foco militar, perfil veterano nivel 45 Diamante I, oro y diamantes.
-            - **Armería Original**:
-              - *AK-47*: Alto daño con retroceso clásico.
-              - *MP40*: La reina del combate a corta distancia.
-              - *SCAR*: Estable y balanceada.
-              - *M1014*: Escopeta letal de corta distancia.
-              - *AWM*: El francotirador legendario de caja de suministros.
-              - *Pared Gloo*: Despliegue de cobertura defensiva instantánea.
-            - **Personajes Originales 2019**:
-              - **Adán**: El veterano pionero sin ventajas pasivas.
-              - **Kelly**: Carrera veloz (+6% de velocidad al correr).
-              - **Andrew**: Especialista en armadura (resistencia de chaleco aumentada).
-              - **Eva**: La pionera clásica.
-              - **Ford**: Voluntad de hierro.
+            ### 🎮 Free Fire 2019 Clásico (Bermuda Era) para iOS - Edición Definitiva
+
+            Este archivo `.ipa` fue compilado automáticamente usando GitHub Actions con macOS 14 y Xcode. Se almacena en la carpeta `compiled_ipa/` en cada compilación.
+
+            #### 🔥 Novedades y Recreación Exacta de 2019:
+            - **Splash y Animación de Entrada**: Logo original de Garena en rojo, barra militar de carga con consejos y pantalla interactiva "Toca para Iniciar".
+            - **Lobby Clásico 2019**:
+              - Fondo de base/hangar militar de Bermuda con reflectores y sombras de época.
+              - Personaje 3D interactivo en el centro vistiendo las prendas equipadas en la Bóveda.
+              - Arma equipada en la mano con efectos de fuego/brillo.
+              - Mascota clásica (Shiba / Gatito / Perro Mecánico) acompañando al personaje.
+              - Botón de Emotes (Risa, Aplauso, Provocación, Saludo, El Trono).
+              - Indicadores superiores: Oro (🪙 84,520), Diamantes (💎 2,450), Rango Heroico (3,250 Pts).
+            - **Tienda (Store 2019)**:
+              - Categorías: Destacados, Ropa, Cajas, Personajes, Mascotas, Cubo Mágico.
+              - Compra de cosméticos con Oro o Diamantes en tiempo real.
+            - **Bóveda (Vault 2019)**:
+              - Equipamiento por piezas individuales: Conjuntos, Cabezas, Máscaras, Pecho, Pantalones, Zapatos.
+              - Aspectos legendarios: Pase Sakura (Temp. 1), Pase Hip Hop (Temp. 2), Criminal Rojo, Dino Verde, Pantalón Angelical, Pañuelo Angelical, Chaqueta Heroico 2019.
+            - **Luck Royale 2019**:
+              - Ruletas interactivas con animación de giro y premios: Diamante Royale, Oro Royale, Arma Royale e Incubadora clásica de Dinos y Criminales.
+            - **Armería y Skins con Atributos Reales**:
+              - AK-47 Dragón Llameante (+1 Daño, +2 Cadencia, -1 Cargador).
+              - MP40 Mecánica (+2 Daño, +1 Rango, -1 Recarga).
+              - SCAR Cupido (+2 Cadencia, +1 Daño, -1 Rango).
+              - M1014 Ojo de Gato, AWM Guepardo, Sartén de Oro, Katana Sangrienta.
+            - **Personajes Clásicos 2019**:
+              - Hayato (Bushido), DJ Alok (Ritmo Brutal), Kelly (Carrera Veloz), Kla (Muay Thai +400%), Andrew, Paloma, Maxim, Caroline, Laura, Rafael, Adán, Eva y Ford.
             - **Partida Battle Royale en Bermuda**:
-              - Minimapa radar clásico de Bermuda (Clock Tower, Peak, Pochinok, Bimasakti).
-              - Joystick virtual analógico de movimiento.
-              - Botón de disparo con retroceso y destello en boca de cañón.
-              - Botón de mira con retícula de precisión clásica (punto rojo / 4x).
-              - Despliegue en tiempo real de Paredes Gloo para protegerse de las balas.
-              - Botiquines de curación (Medkits) con animación de recuperación progresiva.
-              - Indicadores de daño numéricos: Amarillo (cuerpo) y Rojo crítico (tiro a la cabeza).
-              - Combate contra bots enemigos con retroalimentación háptica y kill feed en vivo.
-              - Pantalla final de victoria dorada en llamas: **¡¡BOOYAH!!**
-            - **Ajustes de 2019**:
-              - Gráficos: Suave, Estándar, Ultra (60 FPS).
-              - Sensibilidades clásicas: General, Punto Rojo, Mira 2x, Mira 4x, Mira AWM.
-              - Opciones de control: Precisión de apuntar, cambio rápido y AWM soltar para disparar.
-            
+              - Minimapa radar con brújula y ubicaciones legendarias: Clock Tower, Peak, Pochinok, Factory, Bimasakti Strip.
+              - Joystick virtual de 360 grados con bloqueo de sprint.
+              - Botón de disparo con retroceso y destellos, mira de precisión telescópica con zoom.
+              - Despliegue de Paredes Gloo instantáneas para cubrirse del fuego enemigo.
+              - Botiquines con indicador circular y regeneración gradual de HP.
+              - Combate contra bots con IA agresiva y números de daño: Amarillo (cuerpo) y Rojo crítico (Headshot).
+              - Victoria en llamas: ¡¡BOOYAH!! con cálculo de puntos de rango.
+
+            #### 📁 Carpeta de Compilación:
+            - El archivo se guarda en `compiled_ipa/FreeFire.ipa`.
+
             #### 📲 Instalación en tu iPhone / iPad:
-            Puedes instalar este archivo `.ipa` utilizando cualquiera de las siguientes herramientas:
-            1. **TrollStore** (Instalación permanente y sin revocar en iOS compatibles).
-            2. **AltStore / Sidestore** (Instalación gratis con tu Apple ID desde PC o Mac).
-            3. **Sideloadly** (Instalación rápida desde Windows conectando el cable USB).
-            4. **Scarlet / Esign** (Instalación directa en el dispositivo sin computadora).
-          files: FreeFire.ipa
+            1. **TrollStore** (Instalación permanente sin revocaciones).
+            2. **Sideloadly** (Instalación desde Windows o Mac por cable USB).
+            3. **AltStore / Sidestore** (Instalación inalámbrica con Apple ID).
+            4. **Scarlet / Esign** (Instalación directa en el dispositivo móvil).
+          files: |
+            FreeFire.ipa
+            compiled_ipa/FreeFire.ipa
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
