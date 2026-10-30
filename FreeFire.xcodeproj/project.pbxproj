@@ -7,55 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		93AACD37B9BE414CA4A69197 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0946AA687972422CA7071408 /* Assets.xcassets */; };
-		D13DEC3327FB4450BF9386B6 /* FreeFireApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A738C859A6214915A671832C /* FreeFireApp.swift */; };
-		86E662DEC74D422FAF7B9ADC /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC142DBB202C4A50891BC723 /* Character.swift */; };
-		431268A4899E435580BBDCD2 /* Cosmetics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF238678D4748B2ADEE3AA7 /* Cosmetics.swift */; };
-		CC730A71FDEB4AFA96FEEF00 /* GameMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0A59532DF1455D81AD4019 /* GameMatch.swift */; };
-		239CDB64C96748539FB783E9 /* UserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6195A7A6F828459FB0783D27 /* UserState.swift */; };
-		C9BEE4AA88A14A1CBEAA6D6D /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BFF3E0D1A4261A3FB5CD7 /* Weapon.swift */; };
-		E29A9866035D42F89F4FB162 /* FreeFireTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EABCD52C9242FB9DAE74F9 /* FreeFireTheme.swift */; };
-		3533543072DF46B7A6D04E88 /* ArmoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD36268D8C44ECB8A91FED0 /* ArmoryView.swift */; };
-		EAF4D52465214A33BC1EEBB9 /* CharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4B9F28448149038BB62217 /* CharactersView.swift */; };
-		ED91E87B2E714A30B2A9DE20 /* GameplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E02DADB8DBA45F3B1E5001F /* GameplayView.swift */; };
-		A22FEFDC0B7840A4BE01EDBE /* LobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA828D911CB49B69CD0A295 /* LobbyView.swift */; };
-		7E9ED4BD940C457BBADD9226 /* LuckRoyaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBB10F31CF3472399FAA547 /* LuckRoyaleView.swift */; };
-		59A812FCD69D4554A4E8664A /* PetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C58AE3C1FB408492400855 /* PetsView.swift */; };
-		10C0CC7E04B14078B37E51ED /* Settings2019View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D764B663E431421C80220010 /* Settings2019View.swift */; };
-		CB15914EC6F444C783804224 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1708408C1554FACA53F99CE /* SplashScreenView.swift */; };
-		6E9EA4C27E9842B9AB01487B /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7BBCDBE0744BECA742A839 /* StoreView.swift */; };
-		A594A57521AE4CA18BF74EA2 /* VaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651410D65683452582A435D6 /* VaultView.swift */; };
-		257F92A2DDA54291AA893204 /* BermudaMinimapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB3FAEA1027411A8D57B16A /* BermudaMinimapView.swift */; };
-		03E5AB80ADE24DE0A0D8B2E3 /* BooyahVictoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526DF56BC26C43A3B6BA7655 /* BooyahVictoryView.swift */; };
+		7B704322482149A3845CFB3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50CA6D3E3A2842E9AC467A4F /* Assets.xcassets */; };
+		370ADE3C5EF84BE48879AD4B /* FreeFireApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE86E42797A34466939AC987 /* FreeFireApp.swift */; };
+		52218D10E2FF42B4A4425404 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA14644F9240C281F22748 /* Character.swift */; };
+		084DFB75320C4067B82DA326 /* Cosmetics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDF480C0FE44B3F84032739 /* Cosmetics.swift */; };
+		CDFD804E1BC44F3DA25406BE /* GameMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D7991C7C5044D9A224DFC5 /* GameMatch.swift */; };
+		304D6B9A91DC4AEDA8D85A90 /* UserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849113E296C94116B86E5602 /* UserState.swift */; };
+		0CA3468DEEBF4A8F90C31F90 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB828EBC34024149908A37F1 /* Weapon.swift */; };
+		B43BDAEBCEEC414BA5AD88FD /* FreeFireTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C12E016C64617BAE713DA /* FreeFireTheme.swift */; };
+		4983546AFAF84BC29D9CE526 /* ArmoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780AFDEF872E463CA8FAFFB5 /* ArmoryView.swift */; };
+		E12045012AB746828AD9975E /* CharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAE645AAF914202A8CABFC2 /* CharactersView.swift */; };
+		5DB38399280545359517FB64 /* GameplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0A4A14F6034444AF81E995 /* GameplayView.swift */; };
+		FA8B8C01AF0E451997F58A64 /* LobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4B8E9715EF4A10AA685F93 /* LobbyView.swift */; };
+		68EE69D252CF4AB69927EEAD /* LuckRoyaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C4C71EF6AC4F96B68C33A3 /* LuckRoyaleView.swift */; };
+		5194A66B0E1D49E08882B670 /* PetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D434F2BD3340CAA6CC5064 /* PetsView.swift */; };
+		9AA267646C9E4D94A583B4EA /* Settings2019View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55B869BFB5F4F29928164A2 /* Settings2019View.swift */; };
+		56DF8E4FABE14672919F6993 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB3EB57B09945C98F52E6FF /* SplashScreenView.swift */; };
+		2BF20DC375FE428898D63549 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C92E51249CC403CBE89B938 /* StoreView.swift */; };
+		1F357A94B9D24C08A00B1382 /* VaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B16309EF750404E91BCF1D1 /* VaultView.swift */; };
+		1722706C1B4944EF91069E8C /* BermudaMinimapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA659E35BB4465BA8893296 /* BermudaMinimapView.swift */; };
+		1C9C7249479044438E116563 /* BooyahVictoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17EBB6AF76B439B932F268A /* BooyahVictoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		30F7FC8362D24BD28FCF5F77 /* FreeFire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeFire.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		08089E5C0A5D44CAB6E40932 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0946AA687972422CA7071408 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
-		A738C859A6214915A671832C /* FreeFireApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App/FreeFireApp.swift"; sourceTree = "<group>"; };
-		EC142DBB202C4A50891BC723 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Models/Character.swift"; sourceTree = "<group>"; };
-		8DF238678D4748B2ADEE3AA7 /* Cosmetics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Models/Cosmetics.swift"; sourceTree = "<group>"; };
-		DA0A59532DF1455D81AD4019 /* GameMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Models/GameMatch.swift"; sourceTree = "<group>"; };
-		6195A7A6F828459FB0783D27 /* UserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Models/UserState.swift"; sourceTree = "<group>"; };
-		EC4BFF3E0D1A4261A3FB5CD7 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Models/Weapon.swift"; sourceTree = "<group>"; };
-		88EABCD52C9242FB9DAE74F9 /* FreeFireTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme/FreeFireTheme.swift"; sourceTree = "<group>"; };
-		2BD36268D8C44ECB8A91FED0 /* ArmoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/ArmoryView.swift"; sourceTree = "<group>"; };
-		6B4B9F28448149038BB62217 /* CharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/CharactersView.swift"; sourceTree = "<group>"; };
-		0E02DADB8DBA45F3B1E5001F /* GameplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/GameplayView.swift"; sourceTree = "<group>"; };
-		3DA828D911CB49B69CD0A295 /* LobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/LobbyView.swift"; sourceTree = "<group>"; };
-		6BBB10F31CF3472399FAA547 /* LuckRoyaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/LuckRoyaleView.swift"; sourceTree = "<group>"; };
-		59C58AE3C1FB408492400855 /* PetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/PetsView.swift"; sourceTree = "<group>"; };
-		D764B663E431421C80220010 /* Settings2019View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/Settings2019View.swift"; sourceTree = "<group>"; };
-		F1708408C1554FACA53F99CE /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/SplashScreenView.swift"; sourceTree = "<group>"; };
-		CC7BBCDBE0744BECA742A839 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/StoreView.swift"; sourceTree = "<group>"; };
-		651410D65683452582A435D6 /* VaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/VaultView.swift"; sourceTree = "<group>"; };
-		9FB3FAEA1027411A8D57B16A /* BermudaMinimapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/Components/BermudaMinimapView.swift"; sourceTree = "<group>"; };
-		526DF56BC26C43A3B6BA7655 /* BooyahVictoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/Components/BooyahVictoryView.swift"; sourceTree = "<group>"; };
+		FF26B63B9CC54492B4611E0D /* FreeFire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeFire.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB374A79F7D04E8C995556A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50CA6D3E3A2842E9AC467A4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
+		EE86E42797A34466939AC987 /* FreeFireApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App/FreeFireApp.swift"; sourceTree = "<group>"; };
+		C9BA14644F9240C281F22748 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Models/Character.swift"; sourceTree = "<group>"; };
+		CCDF480C0FE44B3F84032739 /* Cosmetics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Models/Cosmetics.swift"; sourceTree = "<group>"; };
+		02D7991C7C5044D9A224DFC5 /* GameMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Models/GameMatch.swift"; sourceTree = "<group>"; };
+		849113E296C94116B86E5602 /* UserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Models/UserState.swift"; sourceTree = "<group>"; };
+		AB828EBC34024149908A37F1 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Models/Weapon.swift"; sourceTree = "<group>"; };
+		CD2C12E016C64617BAE713DA /* FreeFireTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme/FreeFireTheme.swift"; sourceTree = "<group>"; };
+		780AFDEF872E463CA8FAFFB5 /* ArmoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/ArmoryView.swift"; sourceTree = "<group>"; };
+		6FAE645AAF914202A8CABFC2 /* CharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/CharactersView.swift"; sourceTree = "<group>"; };
+		EF0A4A14F6034444AF81E995 /* GameplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/GameplayView.swift"; sourceTree = "<group>"; };
+		BB4B8E9715EF4A10AA685F93 /* LobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/LobbyView.swift"; sourceTree = "<group>"; };
+		F1C4C71EF6AC4F96B68C33A3 /* LuckRoyaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/LuckRoyaleView.swift"; sourceTree = "<group>"; };
+		F2D434F2BD3340CAA6CC5064 /* PetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/PetsView.swift"; sourceTree = "<group>"; };
+		B55B869BFB5F4F29928164A2 /* Settings2019View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/Settings2019View.swift"; sourceTree = "<group>"; };
+		ADB3EB57B09945C98F52E6FF /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/SplashScreenView.swift"; sourceTree = "<group>"; };
+		0C92E51249CC403CBE89B938 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/StoreView.swift"; sourceTree = "<group>"; };
+		5B16309EF750404E91BCF1D1 /* VaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/VaultView.swift"; sourceTree = "<group>"; };
+		4EA659E35BB4465BA8893296 /* BermudaMinimapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/Components/BermudaMinimapView.swift"; sourceTree = "<group>"; };
+		A17EBB6AF76B439B932F268A /* BooyahVictoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/Components/BooyahVictoryView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F98638ABA8ED407F8E7EEA80 /* Frameworks */ = {
+		847B904712384DE9B4561214 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -65,46 +65,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6BBC51FC0EFB40709A1C65C7 = {
+		06DF27661F4948178E1981D0 = {
 			isa = PBXGroup;
 			children = (
-				2129761740E946EE88569531 /* FreeFire */,
-				F34B64F8639340478EB4AE3A /* Products */,
+				B350408811D7465388052034 /* FreeFire */,
+				93386C3059CC4FC5A2D82FD7 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		F34B64F8639340478EB4AE3A /* Products */ = {
+		93386C3059CC4FC5A2D82FD7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				30F7FC8362D24BD28FCF5F77 /* FreeFire.app */,
+				FF26B63B9CC54492B4611E0D /* FreeFire.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2129761740E946EE88569531 /* FreeFire */ = {
+		B350408811D7465388052034 /* FreeFire */ = {
 			isa = PBXGroup;
 			children = (
-				08089E5C0A5D44CAB6E40932 /* Info.plist */,
-				0946AA687972422CA7071408 /* Assets.xcassets */,
-				A738C859A6214915A671832C /* FreeFireApp.swift */,
-				EC142DBB202C4A50891BC723 /* Character.swift */,
-				8DF238678D4748B2ADEE3AA7 /* Cosmetics.swift */,
-				DA0A59532DF1455D81AD4019 /* GameMatch.swift */,
-				6195A7A6F828459FB0783D27 /* UserState.swift */,
-				EC4BFF3E0D1A4261A3FB5CD7 /* Weapon.swift */,
-				88EABCD52C9242FB9DAE74F9 /* FreeFireTheme.swift */,
-				2BD36268D8C44ECB8A91FED0 /* ArmoryView.swift */,
-				6B4B9F28448149038BB62217 /* CharactersView.swift */,
-				0E02DADB8DBA45F3B1E5001F /* GameplayView.swift */,
-				3DA828D911CB49B69CD0A295 /* LobbyView.swift */,
-				6BBB10F31CF3472399FAA547 /* LuckRoyaleView.swift */,
-				59C58AE3C1FB408492400855 /* PetsView.swift */,
-				D764B663E431421C80220010 /* Settings2019View.swift */,
-				F1708408C1554FACA53F99CE /* SplashScreenView.swift */,
-				CC7BBCDBE0744BECA742A839 /* StoreView.swift */,
-				651410D65683452582A435D6 /* VaultView.swift */,
-				9FB3FAEA1027411A8D57B16A /* BermudaMinimapView.swift */,
-				526DF56BC26C43A3B6BA7655 /* BooyahVictoryView.swift */,
+				EB374A79F7D04E8C995556A2 /* Info.plist */,
+				50CA6D3E3A2842E9AC467A4F /* Assets.xcassets */,
+				EE86E42797A34466939AC987 /* FreeFireApp.swift */,
+				C9BA14644F9240C281F22748 /* Character.swift */,
+				CCDF480C0FE44B3F84032739 /* Cosmetics.swift */,
+				02D7991C7C5044D9A224DFC5 /* GameMatch.swift */,
+				849113E296C94116B86E5602 /* UserState.swift */,
+				AB828EBC34024149908A37F1 /* Weapon.swift */,
+				CD2C12E016C64617BAE713DA /* FreeFireTheme.swift */,
+				780AFDEF872E463CA8FAFFB5 /* ArmoryView.swift */,
+				6FAE645AAF914202A8CABFC2 /* CharactersView.swift */,
+				EF0A4A14F6034444AF81E995 /* GameplayView.swift */,
+				BB4B8E9715EF4A10AA685F93 /* LobbyView.swift */,
+				F1C4C71EF6AC4F96B68C33A3 /* LuckRoyaleView.swift */,
+				F2D434F2BD3340CAA6CC5064 /* PetsView.swift */,
+				B55B869BFB5F4F29928164A2 /* Settings2019View.swift */,
+				ADB3EB57B09945C98F52E6FF /* SplashScreenView.swift */,
+				0C92E51249CC403CBE89B938 /* StoreView.swift */,
+				5B16309EF750404E91BCF1D1 /* VaultView.swift */,
+				4EA659E35BB4465BA8893296 /* BermudaMinimapView.swift */,
+				A17EBB6AF76B439B932F268A /* BooyahVictoryView.swift */,
 			);
 			path = FreeFire;
 			sourceTree = "<group>";
@@ -112,13 +112,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7BBFEB76E22B4423B2E1BCAF /* FreeFire */ = {
+		47EFD3A07DFA498FA4E6C691 /* FreeFire */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6A6C6F386B3B4FE585208C61 /* Build configuration list for PBXNativeTarget "FreeFire" */;
+			buildConfigurationList = 0055392D4E7444B9B47631F0 /* Build configuration list for PBXNativeTarget "FreeFire" */;
 			buildPhases = (
-				7BFCDD3DD60B4053896DE653 /* Sources */,
-				F98638ABA8ED407F8E7EEA80 /* Frameworks */,
-				9E332906A87340CEAD2D7017 /* Resources */,
+				3EBB042ACC48491997ACF112 /* Sources */,
+				847B904712384DE9B4561214 /* Frameworks */,
+				EBDF572E63C44E9B8F068575 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -126,25 +126,25 @@
 			);
 			name = FreeFire;
 			productName = FreeFire;
-			productReference = 30F7FC8362D24BD28FCF5F77 /* FreeFire.app */;
+			productReference = FF26B63B9CC54492B4611E0D /* FreeFire.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D2B1B66FB4B84BDDADA3641A /* Project object */ = {
+		CDD79D8EAD6449ECAA5FA659 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					7BBFEB76E22B4423B2E1BCAF = {
+					47EFD3A07DFA498FA4E6C691 = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
-			buildConfigurationList = 3EE5AC1CE7AD483089444D80 /* Build configuration list for PBXProject "FreeFire" */;
+			buildConfigurationList = 1280F2EFD4CB466D8CBAF988 /* Build configuration list for PBXProject "FreeFire" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -152,58 +152,58 @@
 				en,
 				Base,
 			);
-			mainGroup = 6BBC51FC0EFB40709A1C65C7;
-			productRefGroup = F34B64F8639340478EB4AE3A /* Products */;
+			mainGroup = 06DF27661F4948178E1981D0;
+			productRefGroup = 93386C3059CC4FC5A2D82FD7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7BBFEB76E22B4423B2E1BCAF /* FreeFire */,
+				47EFD3A07DFA498FA4E6C691 /* FreeFire */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9E332906A87340CEAD2D7017 /* Resources */ = {
+		EBDF572E63C44E9B8F068575 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93AACD37B9BE414CA4A69197 /* Assets.xcassets in Resources */,
+				7B704322482149A3845CFB3F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7BFCDD3DD60B4053896DE653 /* Sources */ = {
+		3EBB042ACC48491997ACF112 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D13DEC3327FB4450BF9386B6 /* FreeFireApp.swift in Sources */,
-				86E662DEC74D422FAF7B9ADC /* Character.swift in Sources */,
-				431268A4899E435580BBDCD2 /* Cosmetics.swift in Sources */,
-				CC730A71FDEB4AFA96FEEF00 /* GameMatch.swift in Sources */,
-				239CDB64C96748539FB783E9 /* UserState.swift in Sources */,
-				C9BEE4AA88A14A1CBEAA6D6D /* Weapon.swift in Sources */,
-				E29A9866035D42F89F4FB162 /* FreeFireTheme.swift in Sources */,
-				3533543072DF46B7A6D04E88 /* ArmoryView.swift in Sources */,
-				EAF4D52465214A33BC1EEBB9 /* CharactersView.swift in Sources */,
-				ED91E87B2E714A30B2A9DE20 /* GameplayView.swift in Sources */,
-				A22FEFDC0B7840A4BE01EDBE /* LobbyView.swift in Sources */,
-				7E9ED4BD940C457BBADD9226 /* LuckRoyaleView.swift in Sources */,
-				59A812FCD69D4554A4E8664A /* PetsView.swift in Sources */,
-				10C0CC7E04B14078B37E51ED /* Settings2019View.swift in Sources */,
-				CB15914EC6F444C783804224 /* SplashScreenView.swift in Sources */,
-				6E9EA4C27E9842B9AB01487B /* StoreView.swift in Sources */,
-				A594A57521AE4CA18BF74EA2 /* VaultView.swift in Sources */,
-				257F92A2DDA54291AA893204 /* BermudaMinimapView.swift in Sources */,
-				03E5AB80ADE24DE0A0D8B2E3 /* BooyahVictoryView.swift in Sources */,
+				370ADE3C5EF84BE48879AD4B /* FreeFireApp.swift in Sources */,
+				52218D10E2FF42B4A4425404 /* Character.swift in Sources */,
+				084DFB75320C4067B82DA326 /* Cosmetics.swift in Sources */,
+				CDFD804E1BC44F3DA25406BE /* GameMatch.swift in Sources */,
+				304D6B9A91DC4AEDA8D85A90 /* UserState.swift in Sources */,
+				0CA3468DEEBF4A8F90C31F90 /* Weapon.swift in Sources */,
+				B43BDAEBCEEC414BA5AD88FD /* FreeFireTheme.swift in Sources */,
+				4983546AFAF84BC29D9CE526 /* ArmoryView.swift in Sources */,
+				E12045012AB746828AD9975E /* CharactersView.swift in Sources */,
+				5DB38399280545359517FB64 /* GameplayView.swift in Sources */,
+				FA8B8C01AF0E451997F58A64 /* LobbyView.swift in Sources */,
+				68EE69D252CF4AB69927EEAD /* LuckRoyaleView.swift in Sources */,
+				5194A66B0E1D49E08882B670 /* PetsView.swift in Sources */,
+				9AA267646C9E4D94A583B4EA /* Settings2019View.swift in Sources */,
+				56DF8E4FABE14672919F6993 /* SplashScreenView.swift in Sources */,
+				2BF20DC375FE428898D63549 /* StoreView.swift in Sources */,
+				1F357A94B9D24C08A00B1382 /* VaultView.swift in Sources */,
+				1722706C1B4944EF91069E8C /* BermudaMinimapView.swift in Sources */,
+				1C9C7249479044438E116563 /* BooyahVictoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		BAE6912E9BCC47C991FAC6D5 /* Debug */ = {
+		04818276B6C341498B354FFB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -228,7 +228,7 @@
 			};
 			name = Debug;
 		};
-		905A7A9E0A274FB0B61F1744 /* Release */ = {
+		346BF39B577B46CDB80E8002 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -248,7 +248,7 @@
 			};
 			name = Release;
 		};
-		232A47C5193E49FD89A57D0D /* Debug */ = {
+		9C688FC867924E33A8E09593 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -275,7 +275,7 @@
 			};
 			name = Debug;
 		};
-		4C682339678946DC8D81AC8F /* Release */ = {
+		8FDFF8EC1FA7458AA2EB699D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -305,25 +305,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3EE5AC1CE7AD483089444D80 /* Build configuration list for PBXProject "FreeFire" */ = {
+		1280F2EFD4CB466D8CBAF988 /* Build configuration list for PBXProject "FreeFire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BAE6912E9BCC47C991FAC6D5 /* Debug */,
-				905A7A9E0A274FB0B61F1744 /* Release */,
+				04818276B6C341498B354FFB /* Debug */,
+				346BF39B577B46CDB80E8002 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6A6C6F386B3B4FE585208C61 /* Build configuration list for PBXNativeTarget "FreeFire" */ = {
+		0055392D4E7444B9B47631F0 /* Build configuration list for PBXNativeTarget "FreeFire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				232A47C5193E49FD89A57D0D /* Debug */,
-				4C682339678946DC8D81AC8F /* Release */,
+				9C688FC867924E33A8E09593 /* Debug */,
+				8FDFF8EC1FA7458AA2EB699D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D2B1B66FB4B84BDDADA3641A /* Project object */;
+	rootObject = CDD79D8EAD6449ECAA5FA659 /* Project object */;
 }

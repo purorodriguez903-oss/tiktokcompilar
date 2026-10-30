@@ -28,7 +28,8 @@ class UserState: ObservableObject {
     @Published var equippedShoes: String = "cyber_bone_shoes" // Tenis futuristas amarillos y blancos
     @Published var equippedBundle: String = "bundle_cyber_bone" // Conjunto Cazador de Huesos Booyah
     
-    // Equipped Weapon & Pet (Exact match from user's video)
+    // Equipped Character & Pet
+    @Published var equippedCharacterId: String = "char_hayato"
     @Published var equippedWeaponId: String = "w_katana" // Katana en mano
     @Published var equippedWeaponSkinId: String = "skin_katana_blood"
     @Published var equippedPetId: String = "pet_waggor" // Pingüino Sr. Waggor con chaqueta roja
@@ -96,5 +97,23 @@ class UserState: ObservableObject {
             break
         }
         SoundManager.shared.playButtonClick()
+    }
+    
+    func buyWithGold(cost: Int, itemId: String, category: String) -> Bool {
+        guard gold >= cost else { return false }
+        gold -= cost
+        ownedCosmetics.insert(itemId)
+        equipCosmetic(id: itemId, category: category)
+        FreeFireTheme.booyahVictoryHaptic()
+        return true
+    }
+    
+    func buyWithDiamonds(cost: Int, itemId: String, category: String) -> Bool {
+        guard diamonds >= cost else { return false }
+        diamonds -= cost
+        ownedCosmetics.insert(itemId)
+        equipCosmetic(id: itemId, category: category)
+        FreeFireTheme.booyahVictoryHaptic()
+        return true
     }
 }
