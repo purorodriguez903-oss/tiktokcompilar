@@ -4,57 +4,69 @@ import Combine
 class UserState: ObservableObject {
     static let shared = UserState()
     
-    // Player Profile (Authentic 2019 Veteran)
-    @Published var playerName: String = "VETERANO_2019"
-    @Published var playerLevel: Int = 55
-    @Published var rankScore: Int = 3250 // Heroico threshold in 2019
+    // Player Profile (Exact match from user's video)
+    @Published var playerName: String = "000ECRT"
+    @Published var playerLevel: Int = 57
+    @Published var rankScore: Int = 539 // Estrellas Heroico en DE-Clasificatoria
     @Published var rankName: String = "HEROICO"
-    @Published var guildName: String = "LOS_VETERANOS"
+    @Published var guildName: String = "0xModz"
+    @Published var region: String = "NORTE AMÉRICA"
+    @Published var loginState: String = "Google • Rafa"
     
-    // Currencies
-    @Published var gold: Int = 84520
-    @Published var diamonds: Int = 2450
-    @Published var magicCubes: Int = 2
-    @Published var evolutionStones: Int = 5
-    @Published var blueprints: Int = 3
+    // Currencies (Exact match from user's video)
+    @Published var gold: Int = 18060
+    @Published var diamonds: Int = 94
+    @Published var booyahPassLevel: Int = 20
+    @Published var magicCubes: Int = 3
+    @Published var evolutionStones: Int = 7
+    @Published var tokensDonMuerte: Int = 3
     
-    // Equipped Cosmetics
-    @Published var equippedHead: String = "sakura_mask" // Máscara Oni Sakura
-    @Published var equippedTop: String = "sakura_top"   // Chaqueta Kimono Sakura
-    @Published var equippedPants: String = "sakura_pants" // Pantalón Sakura
-    @Published var equippedShoes: String = "jordan_retro" // Tenis clásicos
-    @Published var equippedBundle: String = "bundle_sakura" // Pase Sakura Season 1
+    // Equipped Cosmetics (Exact match from user's video)
+    @Published var equippedHead: String = "cyber_bone_head" // Máscara y cabello puntiagudo amarillo
+    @Published var equippedTop: String = "cyber_bone_jacket" // Chaqueta cibernética hueso con costillas doradas
+    @Published var equippedPants: String = "cyber_bone_pants" // Pantalón blindado negro y amarillo
+    @Published var equippedShoes: String = "cyber_bone_shoes" // Tenis futuristas amarillos y blancos
+    @Published var equippedBundle: String = "bundle_cyber_bone" // Conjunto Cazador de Huesos Booyah
     
-    // Equipped Weapon & Skin
-    @Published var equippedWeaponId: String = "weapon_ak47"
-    @Published var equippedWeaponSkinId: String = "skin_ak_flaming_dragon" // AK Dragón Llameante
+    // Equipped Weapon & Pet (Exact match from user's video)
+    @Published var equippedWeaponId: String = "w_katana" // Katana en mano
+    @Published var equippedWeaponSkinId: String = "skin_katana_blood"
+    @Published var equippedPetId: String = "pet_waggor" // Pingüino Sr. Waggor con chaqueta roja
     
-    // Equipped Character & Pet
-    @Published var equippedCharacterId: String = "char_hayato"
-    @Published var equippedPetId: String = "pet_shiba"
+    // Active Emote
+    @Published var activeEmote: String = "Batalla de baile"
     
-    // Inventory of owned items
+    // Equipped Emotes for 8-slot wheel (Exact match from video)
+    @Published var wheelEmotes: [String] = [
+        "Batalla de baile",
+        "BOOYAH!",
+        "Aplauso",
+        "Pose de Alas",
+        "Provocación",
+        "Corazón",
+        "Risa",
+        "El Trono"
+    ]
+    
+    // Settings (Exact match from video)
+    @Published var crosshairType: String = "Clásico"
+    @Published var damageIndicatorType: String = "Clásico"
+    @Published var hitEffectType: String = "Oscuro"
+    @Published var impactMarkersType: String = "Clásico"
+    @Published var messageSuggestions: Bool = false
+    @Published var teammateNickname: Bool = false
+    @Published var enemyOutline: Bool = false
+    
+    // Inventory
     @Published var ownedCosmetics: Set<String> = [
-        "bundle_sakura", "sakura_mask", "sakura_top", "sakura_pants",
-        "bundle_hiphop", "hiphop_cap", "hiphop_top", "hiphop_pants",
-        "bundle_criminal_red", "bundle_dino_green",
-        "jacket_heroic_2019", "angelic_pants", "angelic_bandana",
-        "jordan_retro", "classic_boots"
-    ]
-    
-    @Published var ownedWeaponSkins: Set<String> = [
-        "skin_ak_flaming_dragon", "skin_mp40_mechanical", "skin_scar_cupid",
-        "skin_m1014_cat_eye", "skin_awm_cheetah", "skin_pan_gold", "skin_katana_blood"
-    ]
-    
-    @Published var ownedCharacters: Set<String> = [
-        "char_adan", "char_eva", "char_kelly", "char_andrew", "char_kla",
-        "char_hayato", "char_paloma", "char_maxim", "char_caroline",
-        "char_laura", "char_rafael", "char_alok"
+        "bundle_cyber_bone", "cyber_bone_head", "cyber_bone_jacket", "cyber_bone_pants", "cyber_bone_shoes",
+        "bundle_don_muerte", "don_muerte_mask", "don_muerte_jacket",
+        "bundle_sakura", "bundle_hiphop", "bundle_criminal_red", "bundle_dino_green",
+        "jacket_heroic_2019", "angelic_pants", "angelic_bandana", "jordan_retro"
     ]
     
     @Published var ownedPets: Set<String> = [
-        "pet_kitty", "pet_mech_pup", "pet_shiba", "pet_night_panther"
+        "pet_waggor", "pet_shiba", "pet_kitty", "pet_mech_pup", "pet_night_panther"
     ]
     
     private init() {}
@@ -63,22 +75,11 @@ class UserState: ObservableObject {
         switch category {
         case "bundle":
             equippedBundle = id
-            if id == "bundle_sakura" {
-                equippedHead = "sakura_mask"
-                equippedTop = "sakura_top"
-                equippedPants = "sakura_pants"
-            } else if id == "bundle_hiphop" {
-                equippedHead = "hiphop_cap"
-                equippedTop = "hiphop_top"
-                equippedPants = "hiphop_pants"
-            } else if id == "bundle_criminal_red" {
-                equippedHead = "criminal_mask"
-                equippedTop = "criminal_suit"
-                equippedPants = "criminal_pants"
-            } else if id == "bundle_dino_green" {
-                equippedHead = "dino_hood"
-                equippedTop = "dino_suit"
-                equippedPants = "dino_legs"
+            if id == "bundle_cyber_bone" {
+                equippedHead = "cyber_bone_head"
+                equippedTop = "cyber_bone_jacket"
+                equippedPants = "cyber_bone_pants"
+                equippedShoes = "cyber_bone_shoes"
             }
         case "head":
             equippedHead = id
@@ -96,23 +97,4 @@ class UserState: ObservableObject {
         }
         SoundManager.shared.playButtonClick()
     }
-    
-    func buyWithGold(cost: Int, itemId: String, category: String) -> Bool {
-        guard gold >= cost else { return false }
-        gold -= cost
-        ownedCosmetics.insert(itemId)
-        equipCosmetic(id: itemId, category: category)
-        FreeFireTheme.booyahVictoryHaptic()
-        return true
-    }
-    
-    func buyWithDiamonds(cost: Int, itemId: String, category: String) -> Bool {
-        guard diamonds >= cost else { return false }
-        diamonds -= cost
-        ownedCosmetics.insert(itemId)
-        equipCosmetic(id: itemId, category: category)
-        FreeFireTheme.booyahVictoryHaptic()
-        return true
-    }
 }
-

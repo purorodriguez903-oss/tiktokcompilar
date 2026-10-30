@@ -357,30 +357,45 @@ struct GameplayView: View {
             
             Spacer()
             
-            // Top Right: 4 Weapon Slots (Primary, Secondary, Pistol, Melee)
-            HStack(spacing: 6) {
-                ForEach(0..<weaponsLoadout.count, id: \.self) { idx in
-                    let w = weaponsLoadout[idx]
-                    Button(action: {
-                        activeWeaponSlot = idx
-                        FreeFireTheme.gunshotHaptic()
-                    }) {
-                        VStack(spacing: 2) {
-                            Text(w.name)
-                                .font(.system(size: 9, weight: .black))
-                                .foregroundColor(activeWeaponSlot == idx ? .black : .white)
-                            Image(systemName: w.iconSystemName)
-                                .font(.system(size: 12))
-                                .foregroundColor(activeWeaponSlot == idx ? .black : FreeFireTheme.gold)
+            // Top Right: 4 Weapon Slots + Exit Door Button (as seen in video)
+            HStack(spacing: 8) {
+                HStack(spacing: 6) {
+                    ForEach(0..<weaponsLoadout.count, id: \.self) { idx in
+                        let w = weaponsLoadout[idx]
+                        Button(action: {
+                            activeWeaponSlot = idx
+                            FreeFireTheme.gunshotHaptic()
+                        }) {
+                            VStack(spacing: 2) {
+                                Text(w.name)
+                                    .font(.system(size: 8, weight: .black))
+                                    .foregroundColor(activeWeaponSlot == idx ? .black : .white)
+                                Image(systemName: w.iconSystemName)
+                                    .font(.system(size: 11))
+                                    .foregroundColor(activeWeaponSlot == idx ? .black : FreeFireTheme.gold)
+                            }
+                            .frame(width: 52, height: 38)
+                            .background(activeWeaponSlot == idx ? FreeFireTheme.gold : Color.black.opacity(0.6))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 4)
+                                    .stroke(activeWeaponSlot == idx ? Color.white : Color.clear, lineWidth: 1)
+                            )
+                            .cornerRadius(4)
                         }
-                        .frame(width: 58, height: 42)
-                        .background(activeWeaponSlot == idx ? FreeFireTheme.gold : Color.black.opacity(0.6))
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 4)
-                                .stroke(activeWeaponSlot == idx ? Color.white : Color.clear, lineWidth: 1)
-                        )
-                        .cornerRadius(4)
                     }
+                }
+                
+                // Exit Match Door Button (Exact match from video ff2019_18.jpg)
+                Button(action: {
+                    SoundManager.shared.playButtonClick()
+                    onExitToLobby()
+                }) {
+                    Image(systemName: "door.left.hand.open")
+                        .font(.system(size: 16, weight: .bold))
+                        .foregroundColor(.white)
+                        .padding(10)
+                        .background(Color.red.opacity(0.8))
+                        .clipShape(Circle())
                 }
             }
             .padding(.trailing, 14)
@@ -559,7 +574,20 @@ struct GameplayView: View {
                     }
                 }
                 
-                VStack(spacing: 10) {
+                VStack(spacing: 8) {
+                    // Katana / Knife Slash Quick Button (Exact match from video ff2019_18.jpg)
+                    Button(action: {
+                        FreeFireTheme.gunshotHaptic()
+                        damageIndicators.append(DamageIndicator(text: "150 (Katana)", isHeadshot: true, position: CGPoint(x: playerPos.x + 30, y: playerPos.y - 20)))
+                    }) {
+                        Image(systemName: "knife.fill")
+                            .font(.system(size: 16, weight: .bold))
+                            .foregroundColor(.white)
+                            .padding(10)
+                            .background(Color.orange.opacity(0.8))
+                            .clipShape(Circle())
+                    }
+                    
                     // Crouch Button
                     Button(action: {
                         isCrouched.toggle()
