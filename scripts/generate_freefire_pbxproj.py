@@ -7,13 +7,13 @@ def generate_id():
 def main():
     os.makedirs("FreeFire.xcodeproj/xcshareddata/xcschemes", exist_ok=True)
     
-    # Collect all swift files in FreeFire/
+    # Collect all swift files in FreeFire/ relative to FreeFire/
     swift_files = []
     base_dir = "FreeFire"
     for root, dirs, files in os.walk(base_dir):
         for f in files:
             if f.endswith(".swift"):
-                rel_path = os.path.relpath(os.path.join(root, f), ".").replace("\\", "/")
+                rel_path = os.path.relpath(os.path.join(root, f), base_dir).replace("\\", "/")
                 swift_files.append((f, rel_path))
                 
     print(f"Found {len(swift_files)} Swift source files.")
@@ -23,12 +23,6 @@ def main():
     main_group_id = generate_id()
     products_group_id = generate_id()
     ff_group_id = generate_id()
-    app_group_id = generate_id()
-    models_group_id = generate_id()
-    theme_group_id = generate_id()
-    views_group_id = generate_id()
-    components_group_id = generate_id()
-    resources_group_id = generate_id()
     
     target_id = generate_id()
     sources_phase_id = generate_id()
@@ -79,8 +73,8 @@ def main():
     # PBXFileReference
     pbx.append("\n/* Begin PBXFileReference section */")
     pbx.append(f"\t\t{product_file_id} /* FreeFire.app */ = {{isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeFire.app; sourceTree = BUILT_PRODUCTS_DIR; }};")
-    pbx.append(f"\t\t{infoplist_file_id} /* Info.plist */ = {{isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FreeFire/Info.plist; sourceTree = \"<group>\"; }};")
-    pbx.append(f"\t\t{assets_file_id} /* Assets.xcassets */ = {{isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FreeFire/Resources/Assets.xcassets; sourceTree = \"<group>\"; }};")
+    pbx.append(f"\t\t{infoplist_file_id} /* Info.plist */ = {{isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = \"<group>\"; }};")
+    pbx.append(f"\t\t{assets_file_id} /* Assets.xcassets */ = {{isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Resources/Assets.xcassets; sourceTree = \"<group>\"; }};")
     for f in file_entries.values():
         pbx.append(f"\t\t{f['file_id']} /* {f['name']} */ = {{isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = \"{f['path']}\"; sourceTree = \"<group>\"; }};")
     pbx.append("/* End PBXFileReference section */")
