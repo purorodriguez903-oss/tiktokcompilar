@@ -20,8 +20,14 @@ struct EnemyBot: Identifiable {
 struct GlooWallEntity: Identifiable {
     let id = UUID()
     let position: CGPoint
-    let rotation: Double
+    var rotation: Double = 0.0
     var hp: Int = 300
+    
+    init(position: CGPoint, rotation: Double = 0.0, hp: Int = 300) {
+        self.position = position
+        self.rotation = rotation
+        self.hp = hp
+    }
 }
 
 struct DamageIndicator: Identifiable {
@@ -31,5 +37,12 @@ struct DamageIndicator: Identifiable {
     let position: CGPoint
     var opacity: Double = 1.0
     var offsetY: CGFloat = 0.0
+    
+    init(text: String, isHeadshot: Bool, position: CGPoint, opacity: Double = 1.0, offsetY: CGFloat = 0.0) {
+        self.text = text
+        self.isHeadshot = isHeadshot
+        self.position = position
+        self.opacity = opacity
+        self.offsetY = offsetY
+    }
 }
-

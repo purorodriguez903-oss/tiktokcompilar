@@ -301,3 +301,4 @@ extension CosmeticItem {
         )
     ]
 }
+

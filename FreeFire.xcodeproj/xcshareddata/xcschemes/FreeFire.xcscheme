@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "289825A36D494D21A913ACEB"
+               BlueprintIdentifier = "9DB1FDC2C8584B3C94A925F6"
                BuildableName = "FreeFire.app"
                BlueprintName = "FreeFire"
                ReferencedContainer = "container:FreeFire.xcodeproj">
@@ -44,7 +44,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "289825A36D494D21A913ACEB"
+            BlueprintIdentifier = "9DB1FDC2C8584B3C94A925F6"
             BuildableName = "FreeFire.app"
             BlueprintName = "FreeFire"
             ReferencedContainer = "container:FreeFire.xcodeproj">
@@ -61,7 +61,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "289825A36D494D21A913ACEB"
+            BlueprintIdentifier = "9DB1FDC2C8584B3C94A925F6"
             BuildableName = "FreeFire.app"
             BlueprintName = "FreeFire"
             ReferencedContainer = "container:FreeFire.xcodeproj">

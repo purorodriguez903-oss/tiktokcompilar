@@ -238,3 +238,4 @@ struct VaultView: View {
         userState.equipCosmetic(id: item.id, category: catStr)
     }
 }
+

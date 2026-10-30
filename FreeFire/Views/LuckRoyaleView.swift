@@ -310,3 +310,4 @@ struct LuckRoyaleView: View {
         }
     }
 }
+

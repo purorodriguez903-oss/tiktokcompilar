@@ -109,8 +109,7 @@ struct GameplayView: View {
                 BooyahVictoryView(
                     kills: kills,
                     damage: totalDamage,
-                    rankPoints: 48,
-                    onReturnLobby: onExitToLobby
+                    onReturnToLobby: onExitToLobby
                 )
                 .transition(.opacity)
             }
@@ -673,9 +672,9 @@ struct GameplayView: View {
             
             // Spawn floating damage text
             let indicator = DamageIndicator(
-                position: CGPoint(x: enemy.position.x, y: enemy.position.y - 20),
                 text: "\(damageAmount)",
-                isHeadshot: isHeadshot
+                isHeadshot: isHeadshot,
+                position: CGPoint(x: enemy.position.x, y: enemy.position.y - 20)
             )
             damageIndicators.append(indicator)
             
