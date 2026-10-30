@@ -1,4 +1,4 @@
-name: Compilar TikTok iOS IPA
+name: Compilar Free Fire 2019 iOS IPA
 
 on:
   push:
@@ -30,13 +30,13 @@ jobs:
           echo "Xcode actual:"
           xcodebuild -version
           echo "Esquemas disponibles en el proyecto:"
-          xcodebuild -list -project TikTok.xcodeproj
+          xcodebuild -list -project FreeFire.xcodeproj
 
       - name: Compilar App para iOS (Release)
         run: |
           xcodebuild clean build \
-            -project TikTok.xcodeproj \
-            -scheme TikTok \
+            -project FreeFire.xcodeproj \
+            -scheme FreeFire \
             -configuration Release \
             -destination "generic/platform=iOS" \
             -derivedDataPath derived_data \
@@ -44,48 +44,69 @@ jobs:
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGN_IDENTITY=""
 
-      - name: Empaquetar en archivo TikTok.ipa
+      - name: Empaquetar en archivo FreeFire.ipa
         run: |
           mkdir -p Payload
-          cp -R "derived_data/Build/Products/Release-iphoneos/TikTok.app" Payload/
-          zip -r -q TikTok.ipa Payload
-          ls -lh TikTok.ipa
-          echo "Archivo TikTok.ipa generado con éxito."
+          cp -R "derived_data/Build/Products/Release-iphoneos/FreeFire.app" Payload/
+          zip -r -q FreeFire.ipa Payload
+          ls -lh FreeFire.ipa
+          echo "Archivo FreeFire.ipa generado con éxito."
 
       - name: Subir artefacto IPA
         uses: actions/upload-artifact@v4
         with:
-          name: TikTok-iOS-IPA
-          path: TikTok.ipa
+          name: FreeFire-iOS-IPA
+          path: FreeFire.ipa
           retention-days: 14
 
       - name: Crear GitHub Release con el archivo IPA
-        if: startsWith(github.ref, 'refs/tags/') || github.event.inputs.create_release == 'true'
+        if: startsWith(github.ref, 'refs/tags/') || github.event.inputs.create_release != 'false' || github.event_name == 'push'
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || format('v1.0.0-{0}', github.run_number) }}
-          name: ${{ format('TikTok iOS v1.0.0 (Build {0})', github.run_number) }}
+          tag_name: ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || format('v2019.1.0-{0}', github.run_number) }}
+          name: ${{ format('Free Fire 2019 Clásico iOS v1.40 (Build {0})', github.run_number) }}
           body: |
-            ### 🚀 TikTok Clone para iOS (Compilación Automática)
+            ### 🎮 Free Fire 2019 Clásico (Bermuda Era) para iOS
             
             Este archivo `.ipa` fue compilado automáticamente usando GitHub Actions con macOS 14 y Xcode.
             
-            #### 📱 Características incluidas:
-            - **Inicio (Feed)**: "Siguiendo" y "Para ti" con desplazamiento de vídeos a pantalla completa, likes, comentarios, favoritos, compartir y disco musical giratorio.
-            - **TikTok Shop (Tienda)**: Ofertas relámpago, categorías (Moda, Belleza, Electrónica, etc.), directos de compra, cesta de compras y tramitación de pedidos.
-            - **Amigos**: Búsqueda de amigos, sincronización de contactos y cuentas sugeridas.
-            - **Crear (+)**: Botón central icónico de TikTok con interfaz de grabación de cámara, selector de velocidad, filtros, temporizador y música.
-            - **Bandeja de entrada**: Mensajes directos, notificaciones de actividad y chat en tiempo real.
-            - **Perfil**: Estadísticas de seguidores/siguiendo/likes, biografía, pestañas de vídeos subidos, privados, guardados y me gusta.
-            - **Ajustes y Cambio de Idioma**: Selector de idioma dinámico (Español, English, Français, Português), limpiador de caché y ajustes de TikTok Shop.
+            #### 🔥 Características de la versión clásica 2019:
+            - **Splash y Pantalla de Carga**: Logo original de Garena en rojo, barra de carga militar y frases clásicas de consejos de supervivencia de 2019.
+            - **Lobby Clásico 2019**: Entorno original de hangar/base de Bermuda, iluminación de foco militar, perfil veterano nivel 45 Diamante I, oro y diamantes.
+            - **Armería Original**:
+              - *AK-47*: Alto daño con retroceso clásico.
+              - *MP40*: La reina del combate a corta distancia.
+              - *SCAR*: Estable y balanceada.
+              - *M1014*: Escopeta letal de corta distancia.
+              - *AWM*: El francotirador legendario de caja de suministros.
+              - *Pared Gloo*: Despliegue de cobertura defensiva instantánea.
+            - **Personajes Originales 2019**:
+              - **Adán**: El veterano pionero sin ventajas pasivas.
+              - **Kelly**: Carrera veloz (+6% de velocidad al correr).
+              - **Andrew**: Especialista en armadura (resistencia de chaleco aumentada).
+              - **Eva**: La pionera clásica.
+              - **Ford**: Voluntad de hierro.
+            - **Partida Battle Royale en Bermuda**:
+              - Minimapa radar clásico de Bermuda (Clock Tower, Peak, Pochinok, Bimasakti).
+              - Joystick virtual analógico de movimiento.
+              - Botón de disparo con retroceso y destello en boca de cañón.
+              - Botón de mira con retícula de precisión clásica (punto rojo / 4x).
+              - Despliegue en tiempo real de Paredes Gloo para protegerse de las balas.
+              - Botiquines de curación (Medkits) con animación de recuperación progresiva.
+              - Indicadores de daño numéricos: Amarillo (cuerpo) y Rojo crítico (tiro a la cabeza).
+              - Combate contra bots enemigos con retroalimentación háptica y kill feed en vivo.
+              - Pantalla final de victoria dorada en llamas: **¡¡BOOYAH!!**
+            - **Ajustes de 2019**:
+              - Gráficos: Suave, Estándar, Ultra (60 FPS).
+              - Sensibilidades clásicas: General, Punto Rojo, Mira 2x, Mira 4x, Mira AWM.
+              - Opciones de control: Precisión de apuntar, cambio rápido y AWM soltar para disparar.
             
-            #### 📲 Instalación en tu iPhone:
+            #### 📲 Instalación en tu iPhone / iPad:
             Puedes instalar este archivo `.ipa` utilizando cualquiera de las siguientes herramientas:
             1. **TrollStore** (Instalación permanente y sin revocar en iOS compatibles).
-            2. **AltStore / Sidestore** (Instalación usando tu Apple ID gratis desde Mac o PC).
-            3. **Sideloadly** (Instalación rápida desde Windows o Mac).
-            4. **Scarlet / Esign** (Instalación directa en el dispositivo).
-          files: TikTok.ipa
+            2. **AltStore / Sidestore** (Instalación gratis con tu Apple ID desde PC o Mac).
+            3. **Sideloadly** (Instalación rápida desde Windows conectando el cable USB).
+            4. **Scarlet / Esign** (Instalación directa en el dispositivo sin computadora).
+          files: FreeFire.ipa
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
